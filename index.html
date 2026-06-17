@@ -1,0 +1,2431 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أنوار العترة - الموسوعة التفاعلية المطورة بالنظام الصوتي والرموز الكبرى</title>
+    
+    <!-- PWA Core -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#011c16">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Apple / iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="أنوار العترة">
+    <link rel="apple-touch-icon" sizes="72x72"   href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="96x96"   href="icons/icon-96.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/icon-144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
+
+    <!-- Apple Splash Screens (iPhone/iPad) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Windows / Microsoft -->
+    <meta name="msapplication-TileColor" content="#011c16">
+    <meta name="msapplication-TileImage" content="icons/icon-144.png">
+    <meta name="msapplication-config" content="none">
+
+    <!-- SEO & Social -->
+    <meta name="description" content="الموسوعة التفاعلية الفاخرة لآل بيت النبي الأكرم وسير شهادة الأئمة الأطهار مع المنبه الصوتي والتقويم الهجري">
+    <meta name="keywords" content="أهل البيت, الأئمة الاثني عشر, الحسين, كربلاء, الهجري">
+    <meta name="author" content="أنوار العترة">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="أنوار العترة - الموسوعة التفاعلية">
+    <meta property="og:description" content="موسوعة تفاعلية فاخرة لآل بيت النبي الأكرم (ص)">
+    <meta property="og:image" content="icons/icon-512.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_SA">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="shortcut icon" href="icons/icon-192.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Tajawal & Amiri) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            950: '#011c16',
+                            900: '#043d30',
+                            800: '#065f46',
+                            700: '#047857',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                        amiri: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #01110d; /* Deep Islamic Dark Green Background */
+        }
+        .text-amiri {
+            font-family: 'Amiri', serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #011c16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 4px;
+        }
+        /* Glowing effects */
+        .glow-amber {
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.12);
+        }
+        .glow-amber-focus:focus {
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.35);
+        }
+        /* Neon Green Glowing Button */
+        .glow-green-btn {
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+            transition: all 0.3s ease-in-out;
+        }
+        .glow-green-btn:hover {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.75);
+            transform: scale(1.02);
+        }
+        /* Drop dynamic animation */
+        @keyframes dropBlood {
+            0% { transform: translateY(-10px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(120px); opacity: 0; }
+        }
+        .blood-drop {
+            position: absolute;
+            width: 3px;
+            height: 10px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            animation: dropBlood 2s infinite ease-in;
+        }
+        /* Page Transitions */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-gray-100 min-h-screen flex flex-col selection:bg-amber-600 selection:text-white animate-fadeIn">
+
+    <!-- Top Glow Header decoration -->
+    <div class="h-1.5 w-full bg-gradient-to-r from-amber-600 via-emerald-500 to-amber-500"></div>
+
+    <!-- Installation Banner (PWA Installer) -->
+    <div id="pwa-install-banner" class="hidden bg-gradient-to-r from-emerald-950 to-emerald-900 border-b border-amber-500/20 py-2.5 px-4 text-center z-50">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
+            <p class="text-xs sm:text-sm text-emerald-200">
+                ✨ تصفّح الموسوعة بأفضل أداء وبدون إنترنت من خلال تثبيتها على شاشتك الرئيسية!
+            </p>
+            <div class="flex gap-2">
+                <button onclick="installPWA()" class="px-4 py-1.5 bg-gradient-to-r from-amber-500 to-amber-650 text-emerald-950 font-bold text-xs rounded-xl shadow-lg transition-transform active:scale-95">
+                    تثبيت التطبيق الآن 📱
+                </button>
+                <button onclick="dismissInstallBanner()" class="px-3 py-1.5 bg-emerald-900/60 text-emerald-400 hover:text-amber-500 text-xs rounded-xl transition-all">
+                    لاحقاً
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Container -->
+    <div class="flex-grow max-w-6xl w-full mx-auto px-4 py-6 flex flex-col gap-6">
+        
+        <!-- Header Section -->
+        <header class="flex flex-col md:flex-row justify-between items-center bg-gradient-to-br from-emerald-950 to-emerald-900 p-6 rounded-2xl border border-emerald-800/60 shadow-2xl relative overflow-hidden">
+            <!-- Decorative BG vectors -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
+
+            <div class="flex items-center gap-4 z-10">
+                <div class="p-3 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl shadow-lg shadow-amber-600/20 text-emerald-950">
+                    <i data-lucide="book-open" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-3 flex-wrap">
+                        <h1 class="text-2xl md:text-3xl font-extrabold text-amber-400 tracking-wide">أنوار العِترة المُطهَّرة</h1>
+                        <!-- زر الدعم في أعلى الواجهة بجانب العنوان مباشرة -->
+                        <button onclick="toggleSupportModal()" class="flex items-center gap-1.5 bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-bold text-xs px-3.5 py-1.5 rounded-full border border-amber-500/35 transition-all shadow-lg active:scale-95 glow-amber animate-pulse cursor-pointer">
+                            <i data-lucide="heart" class="w-3.5 h-3.5 text-white fill-current"></i>
+                            <span>دعم ومتابعة الموسوعة</span>
+                        </button>
+                    </div>
+                    <p class="text-xs md:text-sm text-emerald-300 mt-1">الموسوعة التفاعلية الفاخرة لآل بيت النبي الأكرم وسير شهادة الأئمة الأطهار</p>
+                </div>
+            </div>
+
+            <!-- Quick Quote Badge / Wisdom of the day -->
+            <div class="mt-4 md:mt-0 max-w-sm w-full bg-emerald-950/70 p-4 rounded-xl border border-emerald-800/80 text-right z-10">
+                <div class="flex items-center gap-2 mb-1">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+                    <span class="text-xs font-semibold text-amber-500 uppercase tracking-wider">الحكمة اليومية المعصومة</span>
+                </div>
+                <p id="daily-quote" class="text-sm text-emerald-100 font-medium italic text-amiri">"العِلْمُ كَنْزٌ عَظِيمٌ لَا يَفْنَى"</p>
+                <p id="daily-quote-author" class="text-xs text-amber-400/80 mt-1 text-left">— الإمام علي بن أبي طالب (ع)</p>
+            </div>
+        </header>
+
+        <!-- Dynamic Date and Voice Control Panel -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Hijri & Gregorian Calendar Box with Sleek Sound Settings trigger -->
+            <div class="lg:col-span-2 bg-gradient-to-br from-emerald-950 to-emerald-900/60 p-6 rounded-2xl border border-emerald-800/80 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl"></div>
+                <div class="absolute bottom-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl"></div>
+
+                <div class="z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 w-full">
+                    <div class="space-y-3 w-full">
+                        <span class="text-xs text-emerald-300 flex items-center gap-1.5 font-bold">
+                            <i data-lucide="calendar" class="w-4 h-4 text-amber-400 animate-pulse"></i> التقويم الإسلامي الموحد والمزامَن
+                        </span>
+                        
+                        <!-- Extra Large Hijri Date View -->
+                        <div class="p-4 bg-emerald-950/60 border border-emerald-800 rounded-xl">
+                            <span class="text-[10px] text-emerald-400 block mb-1">التاريخ الهجري الحالي (كبير جداً)</span>
+                            <p id="hijri-date-display" class="text-3xl sm:text-4xl md:text-5xl font-black text-amber-400 text-amiri tracking-wide drop-shadow-[0_2px_12px_rgba(245,158,11,0.25)] leading-relaxed">جاري حساب التقويم الهجري...</p>
+                        </div>
+
+                        <!-- Large Gregorian Date View -->
+                        <div class="p-3 bg-emerald-950/30 border border-emerald-900/60 rounded-xl">
+                            <span class="text-[10px] text-emerald-400 block mb-1">التاريخ الميلادي الموافق</span>
+                            <p id="gregorian-date-display" class="text-lg sm:text-xl font-bold text-emerald-200 mt-1">جاري القراءة والمزامنة...</p>
+                        </div>
+                    </div>
+
+                    <!-- Voice Settings Floating Trigger Button (Gears Icon) -->
+                    <button onclick="toggleVoiceSettingsModal()" class="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-emerald-950 font-bold px-4 py-3.5 rounded-xl transition-all shadow-lg hover:scale-105 active:scale-95 group self-start sm:self-center shrink-0">
+                        <i data-lucide="sliders" class="w-5 h-5 group-hover:rotate-45 transition-transform duration-300"></i>
+                        <span class="text-xs">لوحة التحكم وإعدادات الصوت</span>
+                    </button>
+                </div>
+
+                <div id="today-event-banner" class="mt-4 p-3.5 bg-emerald-950/80 rounded-xl border border-emerald-850 flex items-center justify-between gap-4 z-10">
+                    <div class="text-right">
+                        <span class="text-[10px] text-amber-500 font-bold block mb-1">مناسبات اليوم وغداً التلقائية</span>
+                        <p id="today-event-text" class="text-xs text-gray-200">لا توجد مناسبات مسجلة لليوم أو الغد.</p>
+                    </div>
+                    <div class="flex gap-1.5 shrink-0">
+                        <button id="alert-speaker-btn" onclick="playCurrentMatchEventAlert()" class="hidden p-2.5 bg-emerald-900 hover:bg-emerald-800 text-amber-400 rounded-lg border border-emerald-800 hover:border-amber-500 transition-all" title="إعادة تشغيل التنبيه">
+                            <i data-lucide="megaphone" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Summary Card -->
+            <div class="bg-gradient-to-br from-emerald-950 to-emerald-900/60 p-5 rounded-2xl border border-emerald-800/80 shadow-lg flex flex-col justify-between relative overflow-hidden">
+                <div>
+                    <span class="text-xs text-emerald-300 flex items-center gap-1.5">
+                        <i data-lucide="radio" class="w-4 h-4 text-emerald-400"></i> حالة المساعد الصوتي
+                    </span>
+                    <div class="flex items-center gap-2 mt-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></div>
+                        <p id="speech-engine-status" class="text-sm font-semibold text-emerald-200">المنبه الصوتي التلقائي مفعّل</p>
+                    </div>
+                    <p class="text-[11px] text-emerald-400/80 mt-1.5 leading-relaxed">
+                        سيقوم المساعد الصوتي بالفحص التلقائي ونطق المناسبات الإسلامية والأئمة الأطهار عند حدوثها مباشرة.
+                    </p>
+                </div>
+                <!-- أزرار التحكم الصوتي المحدثة والمكبرة جداً للمستخدم -->
+                <div class="mt-4 flex flex-col gap-2">
+                    <button onclick="playTestAnnouncement()" class="w-full py-2.5 bg-emerald-900 hover:bg-emerald-800 text-amber-400 font-bold text-xs rounded-xl transition-all border border-emerald-800 flex items-center justify-center gap-1.5 cursor-pointer">
+                        <i data-lucide="volume-2" class="w-4 h-4"></i> اختبار الصوت التجريبي
+                    </button>
+                    <!-- زر إيقاف الصوت الأحمر الفاخر والمضيء لتسهيل الرؤية والاستخدام الفوري -->
+                    <button onclick="stopAllSpeech()" class="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-black text-sm rounded-xl transition-all border border-red-500/40 flex items-center justify-center gap-2 shadow-lg shadow-red-950/50 cursor-pointer animate-pulse" title="إيقاف جميع الأصوات والمنبهات فوراً">
+                        <i data-lucide="volume-x" class="w-5 h-5"></i>
+                        <span>إيقاف وكتم جميع الأصوات فوراً 🛑</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Stats & Interactive Search -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <!-- Search bar -->
+            <div class="md:col-span-2 relative">
+                <input type="text" id="search-input" onkeyup="filterPersonalities()" placeholder="ابحث باسم المعصوم، اللقب، أو تاريخ الولادة/الشهادة..." 
+                    class="w-full bg-emerald-950/60 text-gray-100 placeholder-emerald-400/50 border border-emerald-800/70 rounded-xl px-5 py-3.5 pr-12 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all text-sm glow-amber-focus">
+                <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-amber-500">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </div>
+                <!-- Reset button inside search -->
+                <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute inset-y-0 left-0 flex items-center pl-4 text-emerald-400 hover:text-amber-500 transition-all">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <!-- Quick Stat boxes -->
+            <div class="bg-gradient-to-r from-amber-500/10 to-amber-600/10 p-4 rounded-xl border border-amber-500/20 flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-emerald-300">المحتوى المعرفي</p>
+                    <p class="text-lg font-bold text-amber-400 mt-1"><span id="person-count">23</span> بطاقة تعريفية</p>
+                </div>
+                <div class="p-2.5 bg-amber-500/20 text-amber-400 rounded-lg">
+                    <i data-lucide="award" class="w-5 h-5"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Navigation Menu -->
+        <nav class="flex overflow-x-auto gap-2 bg-emerald-950/80 p-1.5 rounded-xl border border-emerald-800/50">
+            <button onclick="switchTab('imams-tab')" id="btn-imams-tab" class="tab-btn flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-bold transition-all whitespace-nowrap active-tab bg-gradient-to-r from-amber-500 to-amber-600 text-emerald-950 shadow-md">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                الرسول والأئمة الاثني عشر
+            </button>
+            <button onclick="switchTab('women-tab')" id="btn-women-tab" class="tab-btn flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold text-emerald-300 hover:text-amber-400 hover:bg-emerald-900/40 transition-all whitespace-nowrap">
+                <i data-lucide="heart" class="w-4 h-4"></i>
+                النساء الفاضلات
+            </button>
+            <button onclick="switchTab('karbala-tab')" id="btn-karbala-tab" class="tab-btn flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold text-emerald-300 hover:text-amber-400 hover:bg-emerald-900/40 transition-all whitespace-nowrap">
+                <i data-lucide="swords" class="w-4 h-4"></i>
+                شهداء أيمة الطف (ع)
+            </button>
+            <button onclick="switchTab('quiz-tab')" id="btn-quiz-tab" class="tab-btn flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold text-emerald-300 hover:text-amber-400 hover:bg-emerald-900/40 transition-all whitespace-nowrap mr-auto bg-amber-500/10 border border-amber-500/30">
+                <i data-lucide="flame" class="w-4 h-4 text-amber-500 animate-pulse"></i>
+                التحدي التاريخي العميق
+            </button>
+        </nav>
+
+        <!-- MAIN TABS CONTAINER -->
+        <main class="flex-grow">
+            
+            <!-- TAB 1: IMAMS -->
+            <section id="imams-tab" class="tab-content active">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="imams-grid">
+                    <!-- Cards injected via JavaScript -->
+                </div>
+            </section>
+
+            <!-- TAB 2: WOMEN -->
+            <section id="women-tab" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="women-grid">
+                    <!-- Cards injected via JavaScript -->
+                </div>
+            </section>
+
+            <!-- TAB 3: KARBALA (شهداء أيمة الطف) -->
+            <section id="karbala-tab" class="tab-content">
+                <div class="bg-emerald-950/40 p-6 rounded-2xl border border-emerald-800/50 max-w-4xl mx-auto">
+                    <div class="text-center max-w-xl mx-auto mb-8">
+                        <span class="px-3 py-1 rounded-full bg-red-500/15 text-red-400 text-xs font-semibold border border-red-500/20">ملحمة عاشوراء</span>
+                        <h2 class="text-2xl font-bold text-amber-400 mt-2">ترتيب شهداء أيمة الطف وعزائهم</h2>
+                        <p class="text-xs text-emerald-300/80 mt-1.5 leading-relaxed">
+                            جميعهم استشهدوا نصرة ودفاعاً وفداءً مع سبط رسول الله في يوم العاشر من محرم سنة 61 هـ، إلا أن المآتم الحسينية خصصت ترتيب استذكار بطولاتهم وفجائعهم في الأيام التالية:
+                        </p>
+                    </div>
+
+                    <!-- Timeline representation -->
+                    <div class="relative border-r-2 border-red-600/30 mr-4 md:mr-10 pl-2 space-y-8 py-4" id="karbala-timeline">
+                        <!-- Cards injected via JavaScript dynamically to handle blood/symbolic features -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 4: QUIZ GAME -->
+            <section id="quiz-tab" class="tab-content">
+                <div class="bg-gradient-to-br from-emerald-900 to-emerald-950 p-6 md:p-8 rounded-2xl border border-emerald-800 shadow-2xl max-w-2xl mx-auto">
+                    
+                    <!-- Intro View -->
+                    <div id="quiz-intro" class="text-center space-y-6">
+                        <div class="w-20 h-20 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto border-2 border-amber-500/30 text-amber-500">
+                            <i data-lucide="help-circle" class="w-10 h-10 animate-bounce"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-amber-400">تحدي أنوار المعرفة التاريخي المعمق</h2>
+                            <p class="text-sm text-emerald-300 mt-2 px-4 leading-relaxed">
+                                تم تطوير هذا الاختبار بعناية تامة ليحتوي على أسئلة غاية في الدقة والعمق حول تاريخ معركة الطف الخالدة، وسير أئمة أهل البيت (ع) وأعداد الجيوش والتفاصيل الملحمية الدقيقة.
+                            </p>
+                        </div>
+                        
+                        <div class="p-4 bg-emerald-950 rounded-xl border border-emerald-800 max-w-sm mx-auto text-right">
+                            <h3 class="text-xs font-bold text-amber-500 mb-2 flex items-center gap-1.5">
+                                <i data-lucide="info" class="w-4 h-4"></i> قواعد التحدي التاريخي:
+                            </h3>
+                            <ul class="text-xs text-emerald-200 space-y-1.5 list-disc list-inside">
+                                <li>سيتم طرح 8 أسئلة تاريخية بالغة الدقة.</li>
+                                <li>تحتاج إلى تركيز عالٍ وفهم للمصادر التاريخية لأهل البيت (ع).</li>
+                                <li>كل إجابة صحيحة تمنحك +10 نقاط.</li>
+                            </ul>
+                        </div>
+
+                        <button onclick="startQuiz()" class="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-emerald-950 font-bold rounded-xl transition-all shadow-lg shadow-amber-600/20 flex items-center justify-center gap-2 mx-auto">
+                            <i data-lucide="play" class="w-5 h-5"></i>
+                            ابدأ الاختبار المعمق
+                        </button>
+                    </div>
+
+                    <!-- Active Quiz View -->
+                    <div id="quiz-active" class="hidden space-y-6">
+                        <!-- Header with progress -->
+                        <div class="flex items-center justify-between border-b border-emerald-800/80 pb-4">
+                            <div class="flex items-center gap-2 text-amber-400">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                                <span class="text-sm font-bold">النقاط: <span id="quiz-score">0</span></span>
+                            </div>
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-950 rounded border border-emerald-800 text-emerald-300">السؤال <span id="quiz-current-num">1</span> من 8</span>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="w-full bg-emerald-950 h-2 rounded-full overflow-hidden border border-emerald-800">
+                            <div id="quiz-progress-bar" class="bg-amber-500 h-full w-0 transition-all duration-300"></div>
+                        </div>
+
+                        <!-- Question Text -->
+                        <div class="p-4 bg-emerald-950/50 rounded-xl border border-emerald-800">
+                            <p id="quiz-question" class="text-lg font-bold text-gray-100 text-right text-amiri">السؤال التاريخي يظهر هنا</p>
+                        </div>
+
+                        <!-- Option Buttons Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="quiz-options">
+                            <!-- Populated Dynamically -->
+                        </div>
+
+                        <!-- Response Feedback message box -->
+                        <div id="quiz-feedback" class="hidden p-4 rounded-xl border text-center font-semibold text-sm transition-all">
+                        </div>
+
+                        <!-- Next Button -->
+                        <button onclick="nextQuestion()" id="quiz-next-btn" class="hidden w-full py-3 bg-emerald-800 hover:bg-emerald-700 text-amber-400 font-bold rounded-xl transition-all border border-emerald-700 flex items-center justify-center gap-2">
+                            <span>السؤال التالي</span>
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Results View -->
+                    <div id="quiz-result" class="hidden text-center space-y-6">
+                        <div class="w-24 h-24 bg-gradient-to-br from-amber-500 to-amber-600 text-emerald-950 rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-amber-500/20" id="result-icon-container">
+                            <i data-lucide="crown" class="w-12 h-12"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-amber-400" id="result-title">إنجاز عظيم</h3>
+                            <p class="text-sm text-emerald-300 mt-2" id="result-text">تفاصيل النتيجة النهائية للتحدي التاريخي المعمق.</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto">
+                            <div class="bg-emerald-950 p-4 rounded-xl border border-emerald-800">
+                                <span class="block text-xs text-emerald-400">النتيجة النهائية</span>
+                                <span class="text-2xl font-black text-amber-400" id="final-score">0 / 80</span>
+                            </div>
+                            <div class="bg-emerald-950 p-4 rounded-xl border border-emerald-800">
+                                <span class="block text-xs text-emerald-400">التقييم التاريخي</span>
+                                <span class="text-sm font-bold text-emerald-200" id="final-rating">باحث محقق</span>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 max-w-sm mx-auto">
+                            <button onclick="startQuiz()" class="flex-1 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-emerald-950 font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-1.5">
+                                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                                إعادة التحدي
+                            </button>
+                            <button onclick="switchTab('imams-tab')" class="flex-1 py-3 bg-emerald-950 hover:bg-emerald-900 text-emerald-300 hover:text-amber-400 font-bold rounded-xl transition-all border border-emerald-800 flex items-center justify-center gap-1.5">
+                                <i data-lucide="book-open" class="w-4 h-4"></i>
+                                العودة للموسوعة
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- SUPPORT & SOCIAL MEDIA SECTION -->
+        <section class="bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-950 p-6 rounded-2xl border border-amber-500/30 shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-amber-500/5 to-transparent pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <!-- Tilted Zulfiqar Icon at 45 degrees -->
+                    <div class="p-3 bg-amber-500/10 rounded-2xl border border-amber-500/30 transform rotate-45 flex items-center justify-center shrink-0">
+                        <svg viewBox="0 0 100 100" class="w-12 h-12 text-amber-400 fill-none stroke-amber-400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M50 85 V75" stroke-width="6" /> 
+                            <path d="M30 75 H70" stroke-width="4" stroke="#fbbf24" /> 
+                            <circle cx="50" cy="89" r="3.5" class="fill-current text-amber-500" /> 
+                            <path d="M44 75 V25 L38 15 L48 24 V75" fill="rgba(245,158,11,0.15)" /> 
+                            <path d="M56 75 V25 L62 15 L52 24 V75" fill="rgba(245,158,11,0.15)" /> 
+                        </svg>
+                    </div>
+                    <div class="text-right">
+                        <h4 class="text-lg font-bold text-amber-400">قنواتنا الرسمية لنشر علوم أهل البيت (ع)</h4>
+                        <p class="text-xs text-emerald-300 mt-1 font-semibold leading-relaxed">ذو الفقار: رمز الشجاعة والعدل الإلهي</p>
+                        <p class="text-[11px] text-gray-300 mt-1 max-w-xl leading-relaxed">
+                            ندعوكم للانضمام إلينا ومتابعتنا على تيك توك ويوتيوب لنشر الكلمة الطيبة ومسيرة آل محمد الشريفة. تواصل معنا دائماً لدعم الموسوعة التفاعلية.
+                        </p>
+                    </div>
+                </div>
+                <!-- أزرار التواصل والمتابعة الرسمية الخاصة بك -->
+                <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0 z-10">
+                    <button onclick="window.open(supportConfig.tiktokLink, '_blank')" class="flex-1 sm:flex-initial px-5 py-3 bg-black hover:bg-zinc-950 text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 border border-zinc-800 cursor-pointer text-xs">
+                        <i data-lucide="video" class="w-4 h-4 text-emerald-400"></i>
+                        <span>حساب التيك توك</span>
+                    </button>
+                    <button onclick="window.open(supportConfig.youtubeLink, '_blank')" class="flex-1 sm:flex-initial px-5 py-3 bg-red-650 hover:bg-red-700 text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer text-xs">
+                        <i data-lucide="youtube" class="w-4 h-4"></i>
+                        <span>قناة اليوتيوب</span>
+                    </button>
+                    <button onclick="toggleSupportModal()" class="flex-1 sm:flex-initial px-5 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-emerald-950 font-black rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer text-xs">
+                        <i data-lucide="heart" class="w-4 h-4 fill-emerald-950 text-emerald-950"></i>
+                        <span>الدعم الإلكتروني</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="mt-4 pt-6 border-t border-emerald-800/50 text-center text-xs text-emerald-400/80 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p>© أنوار العترة - تطبيق تفاعلي مخصص لنشر علوم ومعارف آل محمد وسيرهم المعصومة عليهم السلام.</p>
+            <div class="flex gap-3 text-[11px]">
+                <span class="hover:text-amber-500 transition-colors cursor-help">إصدار الموسوعة: 8.0 (نسخة الدعم المباشر والروابط الرسمية)</span>
+                <span class="text-emerald-700">|</span>
+                <span class="hover:text-amber-500 transition-colors cursor-help">التواريخ بالتقويم الهجري المعتمد</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- SOUND & ALARM SETTINGS MODAL -->
+    <div id="voice-settings-modal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-gradient-to-b from-emerald-900 to-emerald-950 rounded-2xl max-w-md w-full border border-emerald-700 shadow-2xl overflow-hidden relative" onclick="event.stopPropagation()">
+            
+            <!-- Modal Header -->
+            <div class="bg-emerald-950 p-5 border-b border-emerald-800/85 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="sliders" class="w-5 h-5 text-amber-500 animate-spin-slow"></i>
+                    <h3 class="text-base font-bold text-amber-400">إعدادات المنبه الصوتي الفاخر</h3>
+                </div>
+                <button onclick="toggleVoiceSettingsModal()" class="p-2 bg-emerald-900/60 hover:bg-red-500/20 text-emerald-400 hover:text-red-400 rounded-full transition-all border border-emerald-800/40">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 space-y-5">
+                
+                <!-- Main Voice Switch -->
+                <div class="flex items-center justify-between p-3.5 bg-emerald-950/80 rounded-xl border border-emerald-850">
+                    <div>
+                        <span class="text-sm font-bold text-gray-100 block">نظام التنبيه التلقائي للمناسبات</span>
+                        <span class="text-xs text-emerald-400/80">تشغيل أو إطفاء النطق الصوتي للمناسبات</span>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="voice-alarm-toggle" checked onchange="toggleAlarmSettings()" class="sr-only peer">
+                        <div class="w-11 h-6 bg-emerald-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-gray-300 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
+                    </label>
+                </div>
+
+                <!-- Alert Prior Time config -->
+                <div class="flex items-center justify-between p-3.5 bg-emerald-950/80 rounded-xl border border-emerald-850">
+                    <div>
+                        <span class="text-sm font-bold text-gray-100 block">التنبيه المسبق (قبل المناسبة بيوم)</span>
+                        <span class="text-xs text-emerald-400/80">نطق العبارة التنبيهية غداً ذكرى...</span>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="alarm-day-before" checked class="sr-only peer">
+                        <div class="w-11 h-6 bg-emerald-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-gray-300 after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
+                    </label>
+                </div>
+
+                <!-- Voice Selection Profile -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-amber-500">جنس ونبرة الصوت المفضلة</label>
+                    <select id="voice-gender-profile" onchange="applyVoiceProfile()" 
+                        class="w-full bg-emerald-950 border border-emerald-800 text-gray-200 text-xs rounded-xl p-3 focus:outline-none focus:border-amber-500">
+                        <option value="male" selected>صوت رجالي فخم (رصين ووقور)</option>
+                        <option value="female">صوت نسائي وقور (هادئ ومريح)</option>
+                        <option value="system">صوت النظام المعتمد الافتراضي</option>
+                    </select>
+                </div>
+
+                <!-- Dynamic System Voice List -->
+                <div class="space-y-2" id="system-voice-list-container">
+                    <label class="block text-xs font-bold text-amber-500">المتحدثين باللغة العربية المتوفرين بجهازك</label>
+                    <select id="system-voices-dropdown" 
+                        class="w-full bg-emerald-950 border border-emerald-800 text-gray-200 text-xs rounded-xl p-3 focus:outline-none focus:border-amber-500">
+                        <option value="default">تحميل الأصوات المتوفرة...</option>
+                    </select>
+                </div>
+
+                <!-- Repetition Control -->
+                <div class="p-3.5 bg-emerald-950/80 rounded-xl border border-emerald-850">
+                    <div class="flex justify-between items-center mb-1.5">
+                        <span class="text-xs font-bold text-gray-100">عدد تكرارات الإعلان الصوتي</span>
+                        <span id="repeat-count-display" class="text-xs font-extrabold text-amber-400">3 تكرارات</span>
+                    </div>
+                    <input type="range" id="alarm-repeats" min="1" max="10" value="3" oninput="updateRepeatDisplay()" 
+                        class="w-full h-1.5 bg-emerald-900 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                    <span class="block text-[10px] text-emerald-400 mt-1">يتحكم في عدد مرات نطق المنبه لإيقاظ الوعي والذكرى</span>
+                </div>
+
+                <!-- Simulation / Verification helper panel -->
+                <div class="p-3 bg-emerald-950 rounded-xl border border-emerald-850 space-y-2">
+                    <span class="text-xs text-amber-500 font-bold block mb-1">لوحة محاكاة التاريخ الهجري لتجربة الحالات التفاعلية</span>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <button onclick="simulateDate(10, 'محرم')" class="p-2 bg-red-950/60 hover:bg-red-900 border border-red-900/40 rounded text-red-300 font-semibold transition-all">١٠ محرم (كربلاء ودماء)</button>
+                        <button onclick="simulateDate(20, 'صفر')" class="p-2 bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-800/40 rounded text-emerald-300 font-semibold transition-all">٢٠ صفر (الأربعين)</button>
+                        <button onclick="simulateDate(21, 'رمضان')" class="p-2 bg-red-900/40 hover:bg-red-900 border border-red-900/40 rounded text-red-300 font-semibold transition-all">٢١ رمضان (استشهاد علي)</button>
+                        <button onclick="simulateDate(17, 'ربيع الأول')" class="p-2 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded text-amber-400 font-semibold transition-all">١٧ ربيع الأول (ميلاد محمد)</button>
+                    </div>
+                </div>
+
+                <!-- Interactive Test & Stop Inside modal -->
+                <div class="flex flex-col gap-2">
+                    <button onclick="playTestAnnouncement()" class="w-full py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-emerald-950 font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-amber-500/10">
+                        <i data-lucide="volume-2" class="w-4 h-4"></i> تجربة النطق 🔊
+                    </button>
+                    <button onclick="stopAllSpeech()" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl border border-red-500 font-black text-xs transition-all flex items-center justify-center gap-1.5 animate-pulse" title="كتم الصوت فوراً">
+                        <i data-lucide="volume-x" class="w-4 h-4"></i> إيقاف جميع الأصوات فوراً 🛑
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-emerald-950 p-4 border-t border-emerald-800 text-center">
+                <button onclick="toggleVoiceSettingsModal()" class="px-6 py-2 bg-emerald-800 hover:bg-emerald-700 text-amber-400 font-bold rounded-lg transition-all text-xs border border-emerald-700">
+                    حفظ وإغلاق الإعدادات
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUPPORT & DONATION MODAL -->
+    <div id="support-modal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-gradient-to-b from-emerald-900 to-emerald-950 rounded-2xl max-w-md w-full border border-emerald-700 shadow-2xl overflow-hidden relative" onclick="event.stopPropagation()">
+            
+            <!-- Modal Header -->
+            <div class="bg-emerald-950 p-5 border-b border-emerald-800/85 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <!-- Tilted Zulfiqar Icon at 45 degrees -->
+                    <div class="p-2 bg-amber-500/10 rounded-xl border border-amber-500/30 transform rotate-45 flex items-center justify-center shrink-0">
+                        <svg viewBox="0 0 100 100" class="w-6 h-6 text-amber-400 fill-none stroke-amber-400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M50 85 V75" stroke-width="6" /> 
+                            <path d="M30 75 H70" stroke-width="4" stroke="#fbbf24" /> 
+                            <circle cx="50" cy="89" r="3.5" class="fill-current text-amber-500" /> 
+                            <path d="M44 75 V25 L38 15 L48 24 V75" fill="rgba(245,158,11,0.15)" /> 
+                            <path d="M56 75 V25 L62 15 L52 24 V75" fill="rgba(245,158,11,0.15)" /> 
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-amber-400 mr-2">دعم ومتابعة أنوار العترة</h3>
+                </div>
+                <button onclick="toggleSupportModal()" class="p-2 bg-emerald-900/60 hover:bg-red-500/20 text-emerald-400 hover:text-red-400 rounded-full transition-all border border-emerald-800/40">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 space-y-6 text-right">
+                
+                <div class="text-center bg-emerald-950/60 p-3.5 rounded-xl border border-emerald-800/60">
+                    <span class="text-xs text-amber-400 font-bold block">ذو الفقار: رمز الشجاعة والعدل الإلهي</span>
+                    <span class="text-[10px] text-emerald-300 block mt-1">«لَا فَتىٰ إِلَّا عَلِيٌّ وَلَا سَيْفَ إِلَّا ذُو الْفَقَارِ»</span>
+                </div>
+                
+                <p class="text-xs text-emerald-100 leading-relaxed text-center">
+                    مساهمتكم ومتابعتكم الكريمة تخلد رسالة ومحتوى الموسوعة التفاعلية، وتساعدنا في نشر سير آل البيت الأبرار (ع).
+                </p>
+
+                <!-- أزرار الدعم والمتابعة الدولية المحدثة والمخصصة كلياً -->
+                <div class="space-y-4">
+                    <!-- Ko-fi International Button -->
+                    <div class="p-4 bg-emerald-950/50 rounded-xl border border-emerald-800 hover:border-amber-500/40 transition-all flex flex-col gap-2">
+                        <span class="text-xs font-bold text-amber-400 flex items-center gap-1.5"><i data-lucide="heart" class="w-3.5 h-3.5 fill-current"></i> الدعم الدولي الإلكتروني (Ko-Fi)</span>
+                        <button onclick="openKoFiLink()" class="w-full py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-emerald-950 font-black text-xs rounded-lg transition-all shadow-lg flex items-center justify-center gap-1.5 cursor-pointer">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                            <span>تفضل بزيارة صفحة الدعم الدولي الآمنة</span>
+                        </button>
+                    </div>
+
+                    <!-- TikTok Channel Button -->
+                    <div class="p-4 bg-emerald-950/50 rounded-xl border border-emerald-800 hover:border-amber-500/40 transition-all flex flex-col gap-2">
+                        <span class="text-xs font-bold text-amber-400 flex items-center gap-1.5"><i data-lucide="video" class="w-3.5 h-3.5"></i> قناتنا الرسمية على تيك توك</span>
+                        <button onclick="window.open(supportConfig.tiktokLink, '_blank')" class="w-full py-3 bg-black hover:bg-zinc-950 text-white font-bold text-xs rounded-lg transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer border border-zinc-800">
+                            <i data-lucide="arrow-up-right" class="w-4 h-4 text-emerald-400"></i>
+                            <span>انتقل لصفحة التيك توك الرسمية</span>
+                        </button>
+                    </div>
+
+                    <!-- YouTube Channel Button -->
+                    <div class="p-4 bg-emerald-950/50 rounded-xl border border-emerald-800 hover:border-amber-500/40 transition-all flex flex-col gap-2">
+                        <span class="text-xs font-bold text-amber-400 flex items-center gap-1.5"><i data-lucide="youtube" class="w-3.5 h-3.5"></i> قناتنا الرسمية على يوتيوب</span>
+                        <button onclick="window.open(supportConfig.youtubeLink, '_blank')" class="w-full py-3 bg-red-650 hover:bg-red-700 text-white font-bold text-xs rounded-lg transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+                            <i data-lucide="play" class="w-4 h-4"></i>
+                            <span>انتقل لصفحة اليوتيوب الرسمية</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-emerald-950 p-4 border-t border-emerald-800 text-center">
+                <button onclick="toggleSupportModal()" class="px-6 py-2 bg-emerald-850 hover:bg-emerald-800 text-amber-400 font-bold rounded-lg transition-all text-xs border border-emerald-700 cursor-pointer">
+                    أغلق النافذة
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN MODAL FOR PERSONALITY DETAILS -->
+    <div id="details-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fadeIn">
+        <div class="bg-gradient-to-b from-emerald-900 to-emerald-950 rounded-2xl max-w-md w-full border border-emerald-700/80 shadow-2xl overflow-hidden relative" onclick="event.stopPropagation()">
+            
+            <!-- Modal Header -->
+            <div class="h-28 bg-gradient-to-r from-emerald-850 to-emerald-950 relative flex items-end p-5 border-b border-emerald-800">
+                <div class="absolute top-4 left-4">
+                    <button onclick="closeModal()" class="p-2 bg-emerald-950/60 hover:bg-red-500/20 text-emerald-400 hover:text-red-400 rounded-full transition-all border border-emerald-800/40">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div class="z-10">
+                    <span id="modal-type-badge" class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 text-[10px] font-extrabold border border-amber-500/30 uppercase tracking-wide">الإمام</span>
+                    <h3 id="modal-title" class="text-xl font-bold text-amber-400 mt-1">الإمام علي الرضا (ع)</h3>
+                </div>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 space-y-4">
+                
+                <!-- Quick details row -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-3.5 bg-emerald-950/60 rounded-xl border border-emerald-850 text-right">
+                        <span class="block text-xs text-emerald-400/80 mb-1">تاريخ الولادة</span>
+                        <p id="modal-birth" class="text-sm font-bold text-emerald-100">11 ذو القعدة (148 هـ)</p>
+                    </div>
+                    <div class="p-3.5 bg-emerald-950/60 rounded-xl border border-emerald-850 text-right">
+                        <span class="block text-xs text-emerald-400/80 mb-1">الشهادة / الوفاة</span>
+                        <p id="modal-death" class="text-sm font-bold text-red-400">آخر صفر (203 هـ)</p>
+                    </div>
+                </div>
+
+                <!-- Biography Highlight -->
+                <div class="p-4 bg-emerald-950 rounded-xl border border-emerald-800 text-right">
+                    <h4 class="text-xs font-bold text-amber-500 mb-1.5 flex items-center gap-1">
+                        <i data-lucide="bookmark" class="w-4 h-4"></i> نبذة مباركة عن اللقب والسيرة:
+                    </h4>
+                    <p id="modal-desc" class="text-sm text-emerald-100 leading-relaxed text-right text-amiri">
+                        وهو ثامن الأئمة الأوصياء...
+                    </p>
+                </div>
+
+                <!-- Wisdom card -->
+                <div class="p-4 bg-gradient-to-r from-amber-500/5 to-amber-600/5 rounded-xl border border-amber-500/10 text-right italic relative">
+                    <div class="absolute -top-2.5 right-4 bg-amber-500 text-emerald-950 text-[10px] px-2 py-0.5 rounded font-bold">من مواعظه الكريمة</div>
+                    <p id="modal-quote" class="text-sm text-amber-300 font-medium text-right text-amiri pt-2">"صديق كل امرئ عقله وعدوه جهله."</p>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-emerald-950 p-4 border-t border-emerald-800 text-center">
+                <button onclick="closeModal()" class="px-6 py-2 bg-emerald-800 hover:bg-emerald-700 text-amber-400 font-bold rounded-lg transition-all text-xs border border-emerald-700">
+                    أغلِق النافذة
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEDICATED MARTYRDOM DETAILS MODAL -->
+    <div id="martyrdom-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+        <div class="bg-gradient-to-b from-emerald-950 via-emerald-900 to-emerald-950 rounded-2xl max-w-lg w-full border border-emerald-500/60 shadow-[0_0_40px_rgba(16,185,129,0.25)] overflow-hidden relative" onclick="event.stopPropagation()">
+            
+            <!-- Neon Header -->
+            <div class="bg-emerald-900 p-6 border-b border-emerald-500/30 flex justify-between items-center relative">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-red-500/10 text-red-500 rounded-lg border border-red-500/35">
+                        <i data-lucide="droplet" class="w-6 h-6 animate-pulse"></i>
+                    </div>
+                    <div>
+                        <h3 id="martyrdom-modal-title" class="text-lg font-bold text-amber-400">قصة استشهاد المعصوم</h3>
+                        <p id="martyrdom-modal-subtitle" class="text-xs text-emerald-300">تفاصيل اللحظات الأخيرة والجهة المحرضة</p>
+                    </div>
+                </div>
+                <button onclick="closeMartyrdomModal()" class="p-2 bg-emerald-950/80 hover:bg-red-500/20 text-emerald-400 hover:text-red-400 rounded-full transition-all border border-emerald-800/40">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Martyrdom Modal Body Content -->
+            <div class="p-6 space-y-4">
+                
+                <div class="bg-emerald-950/80 p-5 rounded-xl border border-emerald-800/80 text-right relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-32 h-32 bg-red-600/5 rounded-full blur-2xl"></div>
+                    
+                    <div class="flex items-center justify-between text-xs text-emerald-400 mb-3 border-b border-emerald-900 pb-2">
+                        <span>المرجع التاريخي الموثق</span>
+                        <span class="text-red-400 flex items-center gap-1"><i data-lucide="skull" class="w-3.5 h-3.5"></i> شهادة مظلومة</span>
+                    </div>
+
+                    <!-- Narrative Text -->
+                    <p id="martyrdom-narrative" class="text-base text-gray-200 leading-relaxed text-right text-amiri whitespace-pre-line">
+                        تفاصيل الاستشهاد التاريخية الدقيقة ستظهر هنا بشكل منظم وتفصيلي ومؤثر جداً لربط عاطفة المستخدم ووعيه المعرفي.
+                    </p>
+                </div>
+
+                <!-- Martyrdom Key Stats -->
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="p-3 bg-emerald-950 rounded-lg border border-emerald-900 text-center">
+                        <span class="block text-[10px] text-emerald-400">العمر عند الشهادة</span>
+                        <p id="martyrdom-age" class="text-sm font-bold text-amber-400 mt-1">--</p>
+                    </div>
+                    <div class="p-3 bg-emerald-950 rounded-lg border border-emerald-900 text-center">
+                        <span class="block text-[10px] text-emerald-400">طريقة الشهادة</span>
+                        <p id="martyrdom-method" class="text-sm font-bold text-red-400 mt-1">سم نقيع</p>
+                    </div>
+                    <div class="p-3 bg-emerald-950 rounded-lg border border-emerald-900 text-center">
+                        <span class="block text-[10px] text-emerald-400">القاتل / المحرض</span>
+                        <p id="martyrdom-killer" class="text-xs font-bold text-emerald-100 mt-1">الخليفة العباسي</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="bg-emerald-950/80 p-4 border-t border-emerald-800/50 flex justify-between items-center">
+                <span class="text-[10px] text-emerald-500">السلام عليك يا قتيل العبرات</span>
+                <button onclick="closeMartyrdomModal()" class="px-5 py-2 bg-emerald-800 hover:bg-emerald-700 text-amber-400 font-bold rounded-lg transition-all text-xs border border-emerald-700">
+                    عُد للموسوعة
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- APP JAVASCRIPT LOGIC -->
+    <script>
+        // PWA Installation Setup
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            deferredPrompt = e;
+            // Update UI notify the user they can install the PWA
+            showInstallPromotion();
+        });
+
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('أنوار العترة was installed.');
+            document.getElementById('pwa-install-banner').classList.add('hidden');
+        });
+
+        function showInstallPromotion() {
+            const banner = document.getElementById('pwa-install-banner');
+            if (banner) banner.classList.remove('hidden');
+        }
+
+        function dismissInstallBanner() {
+            const banner = document.getElementById('pwa-install-banner');
+            if (banner) banner.classList.add('hidden');
+        }
+
+        async function installPWA() {
+            if (!deferredPrompt) return;
+            // Show the install prompt
+            deferredPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`User response to the install prompt: ${outcome}`);
+            // We've used the prompt, and can't use it again
+            deferredPrompt = null;
+            dismissInstallBanner();
+        }
+
+        // ===================================================
+        // PWA Service Worker Registration (Enhanced)
+        // ===================================================
+        if ('serviceWorker' in navigator && (window.location.protocol === 'http:' || window.location.protocol === 'https:')) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js', { scope: './' })
+                    .then(reg => {
+                        console.log('[PWA] Service Worker registered, scope:', reg.scope);
+
+                        // Check for SW updates
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    showUpdateToast();
+                                }
+                            });
+                        });
+                    })
+                    .catch(err => {
+                        console.warn('[PWA] Service Worker registration failed:', err);
+                    });
+
+                // Handle SW controlled state changes
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                    console.log('[PWA] New Service Worker is controlling the page.');
+                });
+            });
+        }
+
+        // Show update available toast
+        function showUpdateToast() {
+            const toast = document.createElement('div');
+            toast.className = 'fixed top-4 left-4 right-4 md:left-auto md:max-w-xs bg-emerald-900 border border-amber-500/50 p-4 rounded-xl shadow-2xl z-50 text-right';
+            toast.innerHTML = `
+                <p class="text-sm font-bold text-amber-400 mb-2">🔄 تحديث متوفر!</p>
+                <p class="text-xs text-emerald-200 mb-3">نسخة جديدة من الموسوعة متوفرة الآن.</p>
+                <button onclick="location.reload(true)" class="w-full py-2 bg-amber-500 text-emerald-950 font-bold text-xs rounded-lg">تحديث الآن</button>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 8000);
+        }
+
+        // Full Dataset
+        const database = {
+            imams: [
+                {
+                    id: "prophet",
+                    name: "النبي محمد المصطفى ﷺ",
+                    type: "خاتم الأنبياء والرسل",
+                    birth: "17 ربيع الأول (عام الفيل)",
+                    birthDay: 17, birthMonth: "ربيع الأول",
+                    death: "28 صفر (11 هـ)",
+                    deathDay: 28, deathMonth: "صفر",
+                    desc: "أشرف الخلق والمرسلين، صاحب الرسالة الإسلامية الخالدة، والرحمة المهداة للعالمين كافة.",
+                    quote: "«إنَّما بُعِثتُ لأُتمِّمَ مكارِمَ الأخلاقِ»",
+                    label: "محراب النور: رمز النبوة والرحمة الشاملة للعالمين",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-amber-400 fill-current drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]">
+                            <!-- Mosque Dome and Crescent Symbol -->
+                            <path d="M50 15 C32 15 25 35 25 55 L75 55 C75 35 68 15 50 15 Z" />
+                            <rect x="23" y="55" width="54" height="6" rx="2" />
+                            <path d="M50 8 L50 15" stroke="#fbbf24" stroke-width="3" stroke-linecap="round" />
+                            <circle cx="50" cy="6" r="1.5" />
+                            <!-- Crescent -->
+                            <path d="M58 20 A 15 15 0 1 0 78 45 A 18 18 0 1 1 58 20" class="text-amber-500" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "فاضت روح النبي الطاهرة الزكية إلى الرفيق الأعلى في المدينة المنورة متأثراً بسم دسّ له في ذراع شاة مسمومة في معركة خيبر وظل السُم يعاوده بين الحين والآخر حتى قطع أبهره وقت وفاته.",
+                        age: "63 سنة",
+                        method: "تأثراً بالسم المأكول",
+                        killer: "اليهود في خيبر"
+                    }
+                },
+                {
+                    id: "imam1",
+                    name: "الإمام علي بن أبي طالب (ع)",
+                    type: "أمير المؤمنين - وصي الرسول",
+                    birth: "13 رجب (23 قبل الهجرة)",
+                    birthDay: 13, birthMonth: "رجب",
+                    death: "21 رمضان (40 هـ)",
+                    deathDay: 21, deathMonth: "رمضان",
+                    desc: "أول الأئمة الأطهار وباب علم النبي الأكرم ﷺ، وليد الكعبة المعظمة، الفارس البطل والمشرّع العادل.",
+                    quote: "«العِلْمُ كَنْزٌ عَظِيمٌ لَا يَفْنَى»",
+                    label: "ذو الفقار: رمز للعدالة الإلهية والشجاعة والولاية",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- Majestic vertical Zulfiqar with double tip points -->
+                            <path d="M50 85 V75" stroke-width="5" /> <!-- Hilt/Handle -->
+                            <path d="M35 75 H65" stroke-width="4" stroke="#fbbf24" /> <!-- Guard -->
+                            <circle cx="50" cy="88" r="3" class="fill-current text-amber-500" /> <!-- Pommel -->
+                            <!-- Two-pronged blade -->
+                            <path d="M45 75 V28 L40 18 L48 26 V75" fill="rgba(245,158,11,0.1)" /> <!-- Left prong -->
+                            <path d="M55 75 V28 L60 18 L52 26 V75" fill="rgba(245,158,11,0.1)" /> <!-- Right prong -->
+                            <!-- Radiance -->
+                            <path d="M30 40 L20 40 M70 40 L80 40" stroke-width="1.5" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "ضُرب الإمام أمير المؤمنين (ع) وهو ساجد في محراب مسجد الكوفة أثناء صلاة الفجر في ليلة التاسع عشر من شهر رمضان المعظم بسيف مسموم ضربه الشقي عبد الرحمن بن ملجم المرادي (لعنه الله).",
+                        age: "63 سنة",
+                        method: "ضربة سيف مسموم في السجود",
+                        killer: "ابن ملجم المرادي (لعنه الله)"
+                    }
+                },
+                {
+                    id: "imam2",
+                    name: "الإمام الحسن المجتبى (ع)",
+                    type: "السبط الأكبر - كريم أهل البيت",
+                    birth: "15 رمضان (3 هـ)",
+                    birthDay: 15, birthMonth: "رمضان",
+                    death: "7 صفر (50 هـ)",
+                    deathDay: 7, deathMonth: "صفر",
+                    desc: "ثاني الأئمة، وريحانة الرسول الكريم ﷺ، اشتُهر بالحلم الأسطوري والكرم اللا محدود ومصالحته حقناً للدماء المعصومة.",
+                    quote: "«حُسْنُ الْخُلُقِ رَأْسُ كُلِّ بِرٍّ»",
+                    label: "وثيقة الحسن: رمز الصلح الأخلاقي وحفظ دماء المسلمين",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round">
+                            <!-- rolled Scroll of Peace Treaty -->
+                            <path d="M30 25 C30 20 40 20 45 25 V75 C45 80 30 80 30 75 Z" fill="rgba(245,158,11,0.1)" />
+                            <path d="M45 25 C45 20 70 20 70 25 V75 C70 80 45 80 45 75 Z" />
+                            <!-- Treaty Text lines -->
+                            <line x1="50" y1="35" x2="65" y2="35" stroke-width="2" />
+                            <line x1="50" y1="48" x2="65" y2="48" stroke-width="2" />
+                            <line x1="50" y1="61" x2="60" y2="61" stroke-width="2" />
+                            <!-- Green Olive Branch wrapping around it -->
+                            <path d="M25 75 Q15 45 35 30" stroke="#34d399" stroke-width="2.5" />
+                            <!-- Leaves -->
+                            <path d="M22 60 Q15 55 20 50 Z" fill="#34d399" stroke="none" />
+                            <path d="M18 45 Q12 40 18 35 Z" fill="#34d399" stroke="none" />
+                            <path d="M28 38 Q32 30 26 32 Z" fill="#34d399" stroke="none" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "استشهد ريحانة الرسول السبط الأكبر مسموماً بالمدينة المنورة; حيث قامت زوجته جعدة بنت الأشعث بدس السم الفتاك له في شرابه بتحريض مباشر وممنهج من معاوية بن أبي سفيان.",
+                        age: "47 سنة",
+                        method: "سم فتاك مقطّع للأحشاء",
+                        killer: "جعدة بنت الأشعث بتحريض معاوية"
+                    }
+                },
+                {
+                    id: "imam3",
+                    name: "الإمام الحسين سيد الشهداء (ع)",
+                    type: "السبط الأصغر - أبو الأحرار",
+                    birth: "3 شعبان (4 هـ)",
+                    birthDay: 3, birthMonth: "شعبان",
+                    death: "10 محرم (61 هـ)",
+                    deathDay: 10, deathMonth: "محرم",
+                    desc: "ثالث الأئمة الأطهار وقائد أعظم ملحمة فداء وحرية في تاريخ البشرية بكربلاء المقدسة لرفع راية الإسلام.",
+                    quote: "«إِنَّي لا أَرَى المَوْتَ إِلا سَعَادَةً وَالحَيَاةَ مَعَ الظَّالِمِينَ إِلا بَرَماً»",
+                    label: "قبة كربلاء: رمز للتضحية والجهاد والإباء الحسيني الخالد",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-red-500 fill-none stroke-red-500" stroke-width="3" stroke-linecap="round">
+                            <!-- Karbala Dome with Martyrdom Flag -->
+                            <path d="M50 30 C35 30 30 48 30 65 L70 65 C70 48 65 30 50 30 Z" class="fill-current text-red-650/15" />
+                            <line x1="50" y1="10" x2="50" y2="30" stroke="#ef4444" stroke-width="4" />
+                            <!-- Red Flag waving -->
+                            <path d="M50 10 C65 5 60 22 75 18 L75 25 C60 28 65 15 50 18 Z" class="fill-current text-red-500" stroke="none" />
+                            <rect x="25" y="65" width="50" height="8" rx="2" class="fill-current text-red-700/30" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "ارتقى الإمام الحسين (ع) شهيداً في كربلاء يوم عاشوراء بعد أن حوصر ومُنع عنه وعن عياله الماء، وطُعن وضُرب بضربات السيوف قبل حز رأسه الشريف من القفا ورضّ عظام صدره وظهره بسنابك الخيل الأموية مسبياً حريمه لجبهات الطغيان.",
+                        age: "57 سنة",
+                        method: "القتل بالسيوف وحز الرأس الشريف",
+                        killer: "عمر بن سعد وشمر (بأمر يزيد)"
+                    }
+                },
+                {
+                    id: "imam4",
+                    name: "الإمام علي زين العابدين (ع)",
+                    type: "السجاد - ذو الثفنات",
+                    birth: "5 شعبان (38 هـ)",
+                    birthDay: 5, birthMonth: "شعبان",
+                    death: "25 محرم (95 هـ)",
+                    deathDay: 25, deathMonth: "محرم",
+                    desc: "رابع الأئمة وصاحب الصحيفة السجادية العظيمة (زبور آل محمد)، منبع الزهد والعبادة والداعي الحكيم بالدموع والموعظة.",
+                    quote: "«الرِّضا بِمَكْرُوهِ القَضاءِ مِنْ أعْلَى دَرَجاتِ اليَقينِ»",
+                    label: "محراب السجاد: رمز للعبادة والبكاء والمناجاة والصحيفة",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round">
+                            <!-- Prayer Rug with Glowing Rosary / Masbaha -->
+                            <rect x="30" y="20" width="40" height="60" rx="3" class="fill-current text-amber-500/10" />
+                            <path d="M40 35 L50 25 L60 35 L50 45 Z" />
+                            <!-- Masbaha (Rosary) -->
+                            <circle cx="50" cy="58" r="2" />
+                            <circle cx="56" cy="62" r="2" />
+                            <circle cx="62" cy="68" r="2" />
+                            <circle cx="44" cy="62" r="2" />
+                            <circle cx="38" cy="68" r="2" />
+                            <path d="M50 60 L50 75" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "بعد عمر طويل من الحزن والدموع على واقعة كربلاء، اغتيل الإمام السجاد (ع) بالمدينة المنورة عن طريق السم بطلب وتدبير من الخليفة الأموي الوليد بن عبد الملك.",
+                        age: "57 سنة",
+                        method: "سم نقيع دُس له بالمدينة",
+                        killer: "الوليد بن عبد الملك الأموي"
+                    }
+                },
+                {
+                    id: "imam5",
+                    name: "الإمام محمد الباقر (ع)",
+                    type: "باقر العلم - خامس الأئمة",
+                    birth: "1 رجب (57 هـ)",
+                    birthDay: 1, birthMonth: "رجب",
+                    death: "7 ذو الحجة (114 هـ)",
+                    deathDay: 7, deathMonth: "ذو الحجة",
+                    desc: "خامس الأئمة الأبرار، بقر علم الأولين والآخرين وأرسى القواعد المتينة للمدرسة الفقهية العلوية.",
+                    quote: "«عَالِمٌ يُنْتَفَعُ بِعِلْمِهِ أَفْضَلُ مِنْ سَبْعِينَ أَلْفَ عَابِدٍ»",
+                    label: "باقر العلم: رمز لنهضة العلوم ونشر الأسرار الفقهية والحديث",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round">
+                            <!-- Open Scroll of Holy Knowledge & Quill Pen -->
+                            <path d="M20 35 C35 25 50 45 65 35 L80 30" />
+                            <path d="M20 65 C35 55 50 75 65 65 L80 60" />
+                            <line x1="20" y1="35" x2="20" y2="65" />
+                            <line x1="80" y1="30" x2="80" y2="60" />
+                            <!-- Quill Pen -->
+                            <path d="M75 15 L50 50 L45 55 L50 50 Z" class="fill-current text-amber-500" stroke="none" />
+                            <path d="M50 50 L42 58" stroke-width="2" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "استشهد الإمام الباقر (ع) مسموماً بالمدينة المنورة بعهد هشام بن عبد الملك الأموي, حيث دُس له السّم النافذ من خلال سرج دابة أركب عليها ليمتص جسده الشريف السم تدريجياً.",
+                        age: "57 سنة",
+                        method: "سم فتاك في سرج دابة",
+                        killer: "هشام بن عبد الملك الأموي"
+                    }
+                },
+                {
+                    id: "imam6",
+                    name: "الإمام جعفر الصادق (ع)",
+                    type: "رئيس المذهب - سادس الأئمة",
+                    birth: "17 ربيع الأول (83 هـ)",
+                    birthDay: 17, birthMonth: "ربيع الأول",
+                    death: "25 شوال (148 هـ)",
+                    deathDay: 25, deathMonth: "شوال",
+                    desc: "سادس الأئمة، مؤسس الجامعة الإسلامية الكبرى التي خرّجت آلاف الرواة والعلماء في مختلف العلوم والآداب.",
+                    quote: "«الْعَامِلُ عَلَى غَيْرِ بَصِيرَةٍ كَالسَّائِرِ كَالطَّرِيقِ»",
+                    label: "مصحف المذهب: رمز للمدرسة والجامعة العلمية والفقه الحق",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round">
+                            <!-- Open Book of Knowledge with Inkwell and Quill -->
+                            <path d="M50 75 C35 70 20 75 20 75 V30 C20 30 35 25 50 30 C65 25 80 30 80 30 V75 C80 75 65 70 50 75 Z" fill="rgba(245,158,11,0.1)"/>
+                            <path d="M50 30 V75" />
+                            <!-- Book Lines -->
+                            <line x1="28" y1="42" x2="42" y2="42" stroke-width="2"/>
+                            <line x1="28" y1="52" x2="42" y2="52" stroke-width="2"/>
+                            <line x1="28" y1="62" x2="38" y2="62" stroke-width="2"/>
+                            <line x1="58" y1="42" x2="72" y2="42" stroke-width="2"/>
+                            <line x1="58" y1="52" x2="72" y2="52" stroke-width="2"/>
+                            <line x1="58" y1="62" x2="68" y2="62" stroke-width="2"/>
+                            <!-- Inkwell & Quill representing Jurisprudence & Jafari school -->
+                            <rect x="72" y="65" width="12" height="12" rx="2" class="fill-current text-amber-500/20" stroke-width="2" />
+                            <path d="M82 50 L77 65" stroke-width="2.5" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "قضى الإمام جعفر الصادق (ع) شهيداً مسموماً بالمدينة المنورة بأمر مباشر من المنصور الدوانيقي العباسي؛ مخافة أن ينزع ملك بني العباس لهيبة الصادق العلمية ومحبة قلوب الأمة له.",
+                        age: "65 سنة",
+                        method: "سم نقيع دُس له في عنب مأكول",
+                        killer: "أبو جعفر المنصور العباسي"
+                    }
+                },
+                {
+                    id: "imam7",
+                    name: "الإمام موسى الكاظم (ع)",
+                    type: "كاظم الغيظ - باب الحوائج",
+                    birth: "7 صفر (128 هـ)",
+                    birthDay: 7, birthMonth: "صفر",
+                    death: "25 رجب (183 هـ)",
+                    deathDay: 25, deathMonth: "رجب",
+                    desc: "سابع الأئمة، قَضى شطراً طويلاً من حياته في غياهب السجون العباسية صابراً محتسباً وكاظماً لغيظه.",
+                    quote: "«أَوْشَكُ دَعْوَةٍ وَأَسْرَعُ إِجَابَةٍ دَعْوَةُ الْمُؤْمِنِ لِأَخِيهِ بِظَهْرِ الْغَيْبِ»",
+                    label: "باب الحوائج: رمز التوسل وقضاء حوائج المحتاجين والزهد والصبر",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round">
+                            <!-- Unmistakable Heavy Broken shackles of prison with divine light of patience -->
+                            <path d="M20 40 C15 50 15 65 25 70 C35 75 42 65 42 55" stroke-width="4.5" />
+                            <path d="M80 40 C85 50 85 65 75 70 C65 75 58 65 58 55" stroke-width="4.5" />
+                            <!-- Broken Chain links -->
+                            <path d="M42 55 L48 50 M58 55 L52 50" stroke-width="3" stroke-dasharray="2,2" />
+                            <!-- Divine Radiance and green glow of patience -->
+                            <circle cx="50" cy="50" r="10" class="fill-current text-emerald-500/20" stroke="none" />
+                            <path d="M50 20 V10 M30 30 L20 20 M70 30 L80 20" stroke-width="2" stroke="#10b981" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "قضى الإمام الكاظم (ع) شهيداً مسموماً في زنازين السندي بن شاهك ببغداد بأمر من هارون الرشيد، حيث أجبر على تناول رطب مسموم وظل يعاني منه ثلاثة أيام حتى ارتقى لربه.",
+                        age: "55 سنة",
+                        method: "سم نقيع في رطب مأكول بالسجن",
+                        killer: "هارون الرشيد والسندي بن شاهك"
+                    }
+                },
+                {
+                    id: "imam8",
+                    name: "الإمام علي الرضا (ع)",
+                    type: "غريب طوس - أنيس النفوس",
+                    birth: "11 ذو القعدة (148 هـ)",
+                    birthDay: 11, birthMonth: "غشت",
+                    death: "آخر صفر (203 هـ)",
+                    deathDay: 30, deathMonth: "صفر",
+                    desc: "ثامن الأئمة الكرام، الذي هاجر إلى خراسان وأبهر علماء الأديان والمذاهب في المجالس بنور حُجته وبراهينه العظيمة.",
+                    quote: "«صديق كل امرئ عقله وعدوه جهله»",
+                    label: "ضامن الغزال: رمز للأمان والرحمة والضيافة الخراسانية",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round">
+                            <!-- Golden Dome above -->
+                            <path d="M25 25 C25 25 50 5 50 5 C50 5 75 25 75 25" stroke-width="2" />
+                            <!-- A highly recognizable peaceful Gazelle resting safely -->
+                            <path d="M50 45 L48 30 L55 35 Z" fill="rgba(245,158,11,0.15)" />
+                            <path d="M48 30 Q44 20 40 15 M48 30 Q54 20 58 15" stroke-width="2.5" /> <!-- Antlers -->
+                            <!-- Long elegant neck and body -->
+                            <path d="M48 30 Q42 45 42 55 Q42 75 68 75" stroke-width="3.5" />
+                            <!-- Chest and legs lying down -->
+                            <path d="M42 55 H30 Q25 65 35 70 H65" stroke-width="3.5" />
+                            <!-- Radiant golden sun in the background -->
+                            <circle cx="70" cy="35" r="8" class="fill-current text-amber-500/20" stroke="none" />
+                            <path d="M70 23 V17 M82 35 H88" stroke-width="1.5" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "استشهد ثامن الأئمة الهداة مسموماً في أرض طوس (خراسان) غريباً بعد أن دبر له الخليفة العباسي المأمون السم في شراب رمان أو عنب خوفاً من اتساع نفوذه ومحبة الناس الكبرى له.",
+                        age: "55 سنة",
+                        method: "عصير عنب أو رمان مسموم",
+                        killer: "المأمون العباسي"
+                    }
+                },
+                {
+                    id: "imam9",
+                    name: "الإمام محمد الجواد (ع)",
+                    type: "باب المراد - تاسع الأئمة",
+                    birth: "10 رجب (195 هـ)",
+                    birthDay: 10, birthMonth: "رجب",
+                    death: "آخر ذو القعدة (220 هـ)",
+                    deathDay: 29, deathMonth: "ذو القعدة",
+                    desc: "تاسع الأئمة، تولى الإمامة الفعلية وهو ابن سبع سنين فكان معجزة كبرى أثبتت أحقية العترة الطاهرة.",
+                    quote: "«الْمُؤْمِنُ يَحْتَاجُ إِلَى تَوْفِيقٍ مِنَ اللَّهِ وَوَاعِظٍ مِنْ نَفْسِهِ»",
+                    label: "باب المراد: رمز الباب المفتوح للعطاء والخير والفيض الدائم",
+                    svg: `<svg viewBox="0 0 100 100" class="w-16 h-16 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- Majestic Slightly Open Door -->
+                            <path d="M25 90 V30 C25 15, 75 15, 75 30 V90" stroke-width="3" />
+                            <line x1="15" y1="90" x2="85" y2="90" stroke-width="4.5" />
+                            <!-- Inner glow representing light beaming out -->
+                            <path d="M50 22 L66 32 V90 H50 Z" class="fill-current text-amber-500/20" stroke="none" />
+                            <!-- Left door leaf closed -->
+                            <rect x="28" y="32" width="22" height="58" class="fill-current text-emerald-950/70" stroke-width="2" />
+                            <!-- Right door leaf slightly open -->
+                            <polygon points="50,30 68,36 68,84 50,90" class="fill-current text-emerald-900" stroke-width="3" />
+                            <!-- Knob / Ring handle on open door -->
+                            <circle cx="56" cy="60" r="3.5" stroke="#fbbf24" stroke-width="1.5" />
+                            <!-- Radiant light rays emanating from crevice -->
+                            <path d="M51 45 L62 48 M51 65 L64 69" stroke="#fbbf24" stroke-width="2" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "اغتيل الإمام الجواد (ع) في ريعان شبابه عن عمر لم يتجاوز الـ 25 عاماً في بغداد بسم قتل دُس له من قبل زوجته أم الفضل بتحريض من المعتصم العباسي.",
+                        age: "25 سنة",
+                        method: "سم قاتل من زوجته بأمر السلطة",
+                        killer: "أم الفضل بإيعاز المعتصم العباسي"
+                    }
+                },
+                {
+                    id: "imam10",
+                    name: "الإمام علي الهادي (ع)",
+                    type: "الهادي والناصح - عاشر الأئمة",
+                    birth: "15 ذو الحجة (212 هـ)",
+                    birthDay: 15, birthMonth: "ذو الحجة",
+                    death: "3 رجب (254 هـ)",
+                    deathDay: 3, deathMonth: "رجب",
+                    desc: "عاشر الأئمة الأطهار، عاش تحت المراقبة العسكرية في سامراء وحفظ بيضة الدين وشيعته بكل حكمة وجدارة.",
+                    quote: "«الدُّنْيَا سُوقٌ رَبِحَ فِيهَا قَوْمٌ وَخَسِرَ آخَرُونَ»",
+                    label: "فانوس الهداية: رمز الهداية والنور والإرشاد في سامراء",
+                    svg: `<svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round">
+                            <!-- Glowing lantern / Fanous of Divine Guidance -->
+                            <path d="M40 30 H60 L55 15 H45 Z" class="fill-current text-amber-500/10" />
+                            <rect x="35" y="30" width="30" height="35" rx="3" />
+                            <path d="M50 35 Q58 48 50 60 Q42 48 50 35 Z" class="fill-current text-amber-500" stroke="none" />
+                            <circle cx="50" cy="48" r="2" class="fill-current text-white" stroke="none" />
+                            <rect x="40" y="65" width="20" height="8" rx="1" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "بعد سنوات طويلة قضاها تحت الإقامة الجبرية والمراقبة العسكرية في معسكر سامراء، قضى الإمام الهادي (ع) شهيداً مسموماً بتدبير من المعتز العباسي.",
+                        age: "42 سنة",
+                        method: "سم نافذ مميت في سامراء",
+                        killer: "المعتز العباسي"
+                    }
+                },
+                {
+                    id: "imam11",
+                    name: "الإمام الحسن العسكري (ع)",
+                    type: "العسكري - الحادي عشر",
+                    birth: "8 ربيع الثاني (232 هـ)",
+                    birthDay: 8, birthMonth: "ربيع الثاني",
+                    death: "8 ربيع الأول (260 هـ)",
+                    deathDay: 8, deathMonth: "ربيع الأول",
+                    desc: "الحادي عشر من أئمة العترة، والد المنقذ الموعود الإمام المهدي (عج)، عانى الكثير من التضييق والإقامة الجبرية.",
+                    quote: "«خَصْلَتَانِ لَيْسَ فَوْقَهُمَا شَيْءٌ: الْإِيمَانُ بِاللَّهِ وَنَفْعُ الْإِخْوَانِ»",
+                    label: "الحصن العسكري: رمز حفظ سر الإمامة المهدوية في سامراء",
+                    svg: `<svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round">
+                            <!-- Military fortress of Samarra garrison representation -->
+                            <rect x="25" y="45" width="50" height="35" class="fill-current text-amber-500/10" />
+                            <!-- Castle turrets -->
+                            <path d="M25 45 V35 H35 V45 H45 V35 H55 V45 H65 V35 H75 V45" />
+                            <!-- Tower in middle -->
+                            <rect x="42" y="20" width="16" height="25" fill="rgba(245,158,11,0.05)" />
+                            <path d="M38 20 L50 8 L62 20 Z" fill="rgba(245,158,11,0.2)" />
+                            <!-- Gate -->
+                            <path d="M44 80 V65 C44 60 56 60 56 65 V80" stroke-width="4" stroke="#043d30" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "توفي الإمام الحسن العسكري (ع) مسموماً في سامراء بعد أن قام المعتمد العباسي بدس السم القاتل في طعامه، وظل يعاني آلاماً كاوية لعدة أيام قبل عروجه لربه الشريف.",
+                        age: "28 سنة",
+                        method: "سم كاوٍ في الأمعاء",
+                        killer: "المعتمد العباسي"
+                    }
+                },
+                {
+                    id: "imam12",
+                    name: "الإمام محمد المهدي (عج)",
+                    type: "صاحب الزمان - الحجة المنتظر",
+                    birth: "15 شعبان (255 هـ)",
+                    birthDay: 15, birthMonth: "شعبان",
+                    death: "حي غائب (عجل الله فرجه الشريف)",
+                    desc: "خاتم الأوصياء والأئمة الاثني عشر، غائب بأمر الله ليملأ الأرض قسطاً وعدلاً بعدما ملئت ظلماً وجوراً.",
+                    quote: "«أَكْثِرُوا الدُّعَاءَ بِتَعْجِيلِ الْفَرَجِ فَإِنَّ ذَلِكَ فَرَجُكُمْ»",
+                    label: "ساعة الانتظار: رمز العدالة الإلهية والفرج والنهج الموعود",
+                    svg: `<svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3" stroke-linecap="round">
+                            <!-- Hourglass of Time & Radiant Sword of expected justice -->
+                            <path d="M35 25 H65 L50 50 L35 75 H65" />
+                            <!-- Falling Sand Representing expectation -->
+                            <circle cx="50" cy="35" r="1.5" class="fill-current text-amber-500" stroke="none" />
+                            <circle cx="50" cy="40" r="1.5" class="fill-current text-amber-500" stroke="none" />
+                            <circle cx="50" cy="62" r="2" class="fill-current text-amber-400" stroke="none" />
+                            <!-- Rising rays of light -->
+                            <path d="M20 50 L10 50 M80 50 L90 50 M50 12 V8" />
+                          </svg>`,
+                    martyrdom: {
+                        narrative: "الإمام المهدي (عجل الله فرجه الشريف) هو الإمام الحاضر الحي المغيب عن الأنظار برعاية الباري عز وجل وحمايته، ولم يمت أو يستشهد، وسيظهر في الموعد الإلهي ليحق الحق ويزهق الباطل.",
+                        age: "حي غائب ومغيب بأمر الله",
+                        method: "محفوظ برعاية وقدرة إلهية مطلقة",
+                        killer: "المنقذ الموعود المنتظر لقطع دابر الظالمين"
+                    }
+                }
+            ],
+            women: [
+                {
+                    id: "amina",
+                    name: "السيدة آمنة بنت وهب (ع)",
+                    type: "والدة النبي الأكرم ﷺ",
+                    birth: "قبل الهجرة بـ 75 عاماً",
+                    birthDay: 12, birthMonth: "ربيع الأول",
+                    death: "23 قبل الهجرة",
+                    deathDay: 1, deathMonth: "صفر",
+                    desc: "الطاهرة المصونة، والدة خاتم المرسلين، التي اصطفاها الله جل وعلا لتحمل في أحشائها النور النبوي الأعظم.",
+                    quote: "«حملته فما وجدت له ثقلاً حتى ولدته طاهراً مطهراً»",
+                    svg: `<svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3">
+                            <circle cx="50" cy="50" r="20" class="fill-current text-amber-500/10" />
+                            <path d="M50 20 L50 10 M50 80 L50 90 M20 50 H10 M80 50 H90 M28 28 L20 20 M72 72 L80 80 M28 72 L20 80 M72 28 L80 20" />
+                          </svg>`
+                },
+                {
+                    id: "khadija",
+                    name: "السيدة خديجة الكبرى (ع)",
+                    type: "أم المؤمنين - زوجة الرسول الأولى",
+                    birth: "68 قبل الهجرة",
+                    birthDay: 1, birthMonth: "رمضان",
+                    death: "10 رمضان (3 قبل الهجرة)",
+                    deathDay: 10, deathMonth: "رمضان",
+                    desc: "سيدة قريش الأولى، والداعمة العظمى لرسالة الإسلام بمالها ومواقفها الشامخة في بدء الدعوة المباركة.",
+                    quote: "«لقد آمنت بي إذ كفر الناس وواستني بمالها إذ حرمني الناس»",
+                    svg: `<svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3">
+                            <path d="M25 45 L50 20 L75 45 L50 70 Z" class="fill-current text-amber-500/10" />
+                            <circle cx="50" cy="45" r="6" class="fill-current text-amber-500" stroke="none" />
+                          </svg>`
+                },
+                {
+                    id: "fatima_asad",
+                    name: "السيدة فاطمة بنت أسد (ع)",
+                    type: "والدة الإمام علي (ع) ومربية الرسول",
+                    birth: "قبل الهجرة بـ 68 عاماً",
+                    birthDay: 1, birthMonth: "شعبان",
+                    death: "4 هـ",
+                    deathDay: 23, deathMonth: "صفر",
+                    desc: "السيدة الطاهرة التي ربّت الرسول الكريم فكان يدعوها بأمي، وهي أول امرأة انشق لها جدار الكعبة لتلد وليدها المبارك.",
+                    quote: "«إن الله عز وجل كرمها بولادة علي في بيته العظيم»",
+                    svg: `<svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3">
+                            <rect x="30" y="30" width="40" height="40" class="fill-current text-amber-500/20" />
+                            <path d="M50 30 V70" stroke="#ef4444" stroke-width="4" stroke-dasharray="2,2" />
+                          </svg>`
+                },
+                {
+                    id: "fatima_zahra",
+                    name: "السيدة فاطمة الزهراء (ع)",
+                    type: "بضعة الرسول - سيدة نساء العالمين",
+                    birth: "20 جمادى الآخرة (5 بعثة)",
+                    birthDay: 20, birthMonth: "جمادى الآخرة",
+                    death: "3 جمادى الآخرة (11 هـ)",
+                    deathDay: 3, deathMonth: "جمادى الآخرة",
+                    desc: "الكوثر الفياض وبضعة النبي الأكرم ﷺ، وأم الأئمة النجباء والقدوة الأبدية لنساء العالمين في العبادة والحجاب.",
+                    quote: "«إنّ اللهَ يَغْضَبُ لِغَضَبِ فاطِمَةَ وَيَرْضى لِرِضاها»",
+                    svg: `<svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3">
+                            <circle cx="50" cy="50" r="22" class="fill-current text-white/5" />
+                            <path d="M50 25 C45 35 30 35 35 50 C35 65 50 75 50 75 C50 75 65 65 65 50 C65 35 55 35 50 25 Z" class="fill-current text-amber-500/20" />
+                          </svg>`
+                },
+                {
+                    id: "ruqayya",
+                    name: "السيدة رقية بنت الحسين (ع)",
+                    type: "شهيدة الشام - يتيمة كربلاء",
+                    birth: "حوالي 57 هـ",
+                    birthDay: 20, birthMonth: "شعبان",
+                    death: "5 صفر (61 هـ)",
+                    deathDay: 5, deathMonth: "صفر",
+                    desc: "الطفلة المظلومة التي شهدت رزايا كربلاء، وتوفيت حزناً وكمداً برأس أبيها الحسين (ع) في خربة الشام الأليمة.",
+                    quote: "«يتيمة الحسين التي هزّت عروش الطغاة ببكائها الروحاني الصغير»",
+                    svg: `<svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto text-red-400 fill-none stroke-red-500" stroke-width="3">
+                            <path d="M12 35 C5 55 25 75 50 88 C75 75 95 55 88 35 C80 20 62 25 50 40 C38 25 20 20 12 35 Z" class="fill-current text-red-500/10" />
+                            <path d="M50 35 L40 68" stroke-width="4" />
+                          </svg>`
+                },
+                {
+                    id: "sukayna",
+                    name: "السيدة سكينة بنت الحسين (ع)",
+                    type: "ابنة الإمام الحسين والخطيبة البليغة",
+                    birth: "47 هـ",
+                    birthDay: 24, birthMonth: "رجب",
+                    death: "5 ربيع الأول (117 هـ)",
+                    deathDay: 5, deathMonth: "ربيع الأول",
+                    desc: "عقيلة الطف ذات الهيبة والوقار، المتصفة بالبيان والبلاغة والفصاحة التي واجهت طغاة العصر بكل صلابة وشرف.",
+                    quote: "«غالب عليها الاستغراق مع الله عز وجل بقلبها النوراني المخلص»",
+                    svg: `<svg viewBox="0 0 100 100" class="w-20 h-20 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3">
+                            <path d="M25 25 H75 V75 H25 Z" class="fill-current text-amber-500/10" />
+                            <line x1="35" y1="40" x2="65" y2="40" />
+                            <line x1="35" y1="52" x2="52" y2="52" />
+                            <line x1="35" y1="64" x2="60" y2="64" />
+                          </svg>`
+                }
+            ],
+            karbala: [
+                {
+                    dayNum: 7,
+                    title: "الإمام العباس بن علي (ع)",
+                    subtitle: "ليلة ويوم السابع من محرم (منع الماء)",
+                    birth: "4 شعبان (26 هـ)",
+                    desc: "تُخصص الليلة واليوم بالكامل لقمر العشيرة وكبش الكتيبة العباس بن علي (ع) حامل لواء الحسين وساقي عطاشى كربلاء، وهو اليوم الذي اشتد فيه الحصار ومنع الماء بالكامل عن المخيم الهاشمي الشريف.",
+                    svg: `<svg viewBox="0 0 100 100" class="w-24 h-24 mx-auto text-amber-500 fill-none stroke-amber-400" stroke-width="3.5">
+                            <!-- Severed Right Hand holding the Qirba -->
+                            <path d="M55 50 Q75 35 85 45 L78 60 Q65 50 55 50 Z" class="fill-current text-amber-500/20" />
+                            <!-- Water Skin (Qirba) -->
+                            <path d="M30 40 C30 30 45 25 55 35 L45 68 C35 75 25 60 30 40 Z" class="fill-current text-emerald-950/60" />
+                            <path d="M50 32 L56 22 H62 L55 32" stroke-width="2" /> <!-- Qirba neck -->
+                            <!-- Droplets -->
+                            <circle cx="42" cy="72" r="3" class="fill-current text-emerald-400" stroke="none" />
+                            <circle cx="35" cy="82" r="2" class="fill-current text-red-500" stroke="none" />
+                            <circle cx="48" cy="85" r="1.5" class="fill-current text-emerald-400" stroke="none" />
+                          </svg>`
+                },
+                {
+                    dayNum: 8,
+                    title: "الإمام القاسم بن الحسن (ع)",
+                    subtitle: "ليلة ويوم الثامن من محرم (زفاف الشباب)",
+                    birth: "حوالي 47 هـ",
+                    desc: "تُخصّص ليلة ويوم الثامن لعزاء زفاف القاسم وشبابه العظيم بالدموع والدماء.",
+                    svg: `<svg viewBox="0 0 100 100" class="w-24 h-24 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3.5">
+                            <!-- Youth Crown with Sword -->
+                            <path d="M25 65 L35 45 L50 35 L65 45 L75 65 Z" class="fill-current text-amber-500/15" />
+                            <circle cx="50" cy="35" r="3" class="fill-current text-amber-500" stroke="none" />
+                            <circle cx="35" cy="45" r="2" class="fill-current text-amber-500" stroke="none" />
+                            <circle cx="65" cy="45" r="2" class="fill-current text-amber-500" stroke="none" />
+                            <line x1="20" y1="65" x2="80" y2="65" stroke-width="4" />
+                          </svg>`
+                },
+                {
+                    dayNum: 9,
+                    title: "الإمام علي الأكبر بن الحسين (ع)",
+                    subtitle: "ليلة ويوم تاسوعاء (شبيه المصطفى)",
+                    birth: "11 شعبان (33 هـ)",
+                    desc: "تُخصّص ليلة ويوم تاسوعاء بالكامل لعزاء وتذكار شبيه المصطفى خَلقاً وخُلقاً ومنطقاً، علي الأكبر بن الحسين عليهما السلام، وهو أول شهيد برز للمعركة وضحى بنفسه من بني هاشم.",
+                    svg: `<svg viewBox="0 0 100 100" class="w-24 h-24 mx-auto text-amber-400 fill-none stroke-amber-400" stroke-width="3">
+                            <!-- Spear of Youth and glowing light -->
+                            <line x1="50" y1="10" x2="50" y2="90" stroke-width="4" />
+                            <path d="M45 25 L50 10 L55 25 Z" class="fill-current text-amber-500" stroke="none" />
+                            <!-- Rays representing likeness -->
+                            <path d="M30 45 L15 40 M70 45 L85 40 M35 30 L20 20 M65 30 L80 20" stroke-width="2" />
+                          </svg>`
+                },
+                {
+                    dayNum: 10,
+                    title: "سيد الأحرار الإمام الحسين (ع)",
+                    subtitle: "عاشوراء وملحمة الفداء العظمى",
+                    birth: "3 شعبان (4 هـ)",
+                    desc: "يوم الواقعة العظمى والرزية الكبرى التي اهتزت لها السماوات والأرض؛ حيث استشهد ريحانة المصطفى مظلوماً عطشاناً غريباً مهضوماً بعد أن جابه جيوش الكفر صامداً شامخاً رافضاً للذل في سبيل إحياء الدين والشريعة.",
+                    svg: `<svg viewBox="0 0 100 100" class="w-24 h-24 mx-auto text-red-500 fill-none stroke-red-500" stroke-width="3">
+                            <!-- Grand Red Dome of Imam Hussain with Blood stream -->
+                            <path d="M50 25 C30 25 22 45 22 68 L78 68 C78 45 70 25 50 25 Z" class="fill-current text-red-950/20" />
+                            <line x1="50" y1="5" x2="50" y2="25" stroke-width="5" />
+                            <!-- Red Flag of Martyrdom -->
+                            <path d="M50 5 C68 0 65 18 82 14 L82 22 C65 25 68 12 50 15 Z" class="fill-current text-red-500" stroke="none" />
+                            <rect x="15" y="68" width="70" height="10" rx="3" class="fill-current text-red-900" stroke="none" />
+                          </svg>`
+                }
+            ]
+        };
+
+        // Deep Historical Quiz Questions
+        const quizData = [
+            {
+                q: "متى بدأت معركة الطف (ساعة الصفر لرمي أول سهم والزحف العام) تاريخياً بالتقريب؟",
+                options: [
+                    "عصر يوم التاسع من محرم (تاسوعاء)",
+                    "صباح يوم العاشر من محرم سنة 61 هـ بعد رمي عمر بن سعد بأول سهم",
+                    "ليلة العاشر من محرم أثناء الصلاة والدعاء",
+                    "ظهر يوم الحادي عشر من محرم الحرام"
+                ],
+                correct: 1
+            },
+            {
+                q: "كم بلغ عدد جيش الحسين (ع) المدافعين والمسجلين في أشهر الروايات والخطط العسكرية؟",
+                options: [
+                    "حوالي 10,000 مقاتل وفارس دائم",
+                    "حوالي 72 رجلاً (32 فارساً و40 راجلاً) عدا النساء والأطفال",
+                    "أكثر من 1500 رجل مجهز بالكامل",
+                    "حوالي 300 رجل هاشمي فقط"
+                ],
+                correct: 1
+            },
+            {
+                q: "كم كان عدد القتلى الذين أهلكهم الإمام الحسين (ع) بيديه المباركتين دفاعاً عن نفسه في كربلاء أثناء الحملات الفردية على ما روي في مناقب آل أبي طالب؟",
+                options: [
+                    "حوالي 1950 رجلاً (خلاف من جُرحوا وهلكوا لاحقاً)",
+                    "حوالي 50 رجلاً فقط في المبارزات",
+                    "لم يقتل أحداً بنفسه واكتفى بالدفاع السلبي",
+                    "حوالي 5000 مقاتل أموي"
+                ],
+                correct: 0
+            },
+            {
+                q: "من هو أول شهيد برز للموت وطلب الإذن للقتال من بني هاشم (آل أبي طالب) في يوم عاشوراء؟",
+                options: [
+                    "العباس بن علي (ع)",
+                    "القاسم بن الحسن (ع)",
+                    "علي الأكبر بن الحسين (ع)",
+                    "عبد الله الرضيع (علي الأصغر) (ع)"
+                ],
+                correct: 2
+            },
+            {
+                q: "كم دامت فترة «الغيبة الصغرى» للإمام المهدي (عجل الله فرجه الشريف) التي تواصل فيها عبر السفراء الأربعة？",
+                options: [
+                    "حوالي 250 عاماً كاملة",
+                    "نحو 74 عاماً (من سنة 260 هـ إلى سنة 329 هـ)",
+                    "عشر سنوات فقط",
+                    "نحو 150 عاماً متصلة"
+                ],
+                correct: 1
+            },
+            {
+                q: "من هو الصحابي البطل وسفير الإمام الحسين (ع) المقرب الذي استشهد في الكوفة قبل معركة الطف？",
+                options: [
+                    "حبيب بن مظاهر الأسدي",
+                    "مسلم بن عقيل بن أبي طالب (ع)",
+                    "زهير بن القين البجلي",
+                    "الحر بن يزيد الرياحي"
+                ],
+                correct: 1
+            },
+            {
+                q: "ما هو عُمر الإمام الحسين (عليه السلام) في كربلاء يوم ارتقائه شهيداً مظلوماً؟",
+                options: [
+                    "40 سنة",
+                    "57 سنة",
+                    "63 سنة",
+                    "50 سنة"
+                ],
+                correct: 1
+            },
+            {
+                q: "ما المعركة التاريخية الشهيرة التي قادها أمير المؤمنين علي بن أبي طالب (ع) للقضاء على خطر الخوارج (المارقين)？",
+                options: [
+                    "معركة الجمل",
+                    "معركة صفين",
+                    "معركة النهروان",
+                    "معركة خيبر"
+                ],
+                correct: 2
+            }
+        ];
+
+        // Wisdom Quotes rotation list
+        const randomQuotes = [
+            { text: "«صديق كل امرئ عقله وعدوه جهله»", author: "الإمام علي الرضا (ع)" },
+            { text: "«العِلْمُ كَنْزٌ عَظِيمٌ لَا يَفْنَى»", author: "الإمام علي بن أبي طالب (ع)" },
+            { text: "«إنَّما بُعِثتُ لأُتمِّمَ مكارِمَ الأخلاقِ»", author: "النبي محمد ﷺ" },
+            { text: "«الْمُؤْمِنُ يَحْتَاجُ إِلَى تَوْفِيقٍ مِنَ اللَّهِ وَوَاعِظٍ مِنْ نَفْسِهِ»", author: "الإمام محمد الجواد (ع)" },
+            { text: "«خَصْلَتَانِ لَيْسَ فَوْقَهُمَا شَيْءٌ: الْإِيمَانُ بِاللَّهِ وَنَفْعُ الْإِخْوَانِ»", author: "الإمام الحسن العسكري (ع)" }
+        ];
+
+        // Month indexing for parsing
+        const hijriMonths = [
+            "محرم", "صفر", "ربيع الأول", "ربيع الثاني", "جمادى الأولى", "جمادى الآخرة",
+            "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة"
+        ];
+
+        // App state variables
+        let quizState = {
+            currentIndex: 0,
+            score: 0,
+            questions: [],
+            selectedAnswer: null,
+            answered: false
+        };
+
+        // Voice configurations
+        let currentVoiceConfig = {
+            profile: 'male', 
+            selectedVoiceURI: 'default',
+            pitch: 0.75,
+            rate: 0.8
+        };
+
+        let loadedVoices = [];
+        let lastMatchedEventText = ""; 
+        let simulatedDay = null;
+        let simulatedMonth = null;
+
+        // Support Details Configuration
+        const supportConfig = {
+            koFiLink: "https://ko-fi.com/sahibaleasrwalzamangmailcom",
+            tiktokLink: "https://www.tiktok.com/@ahlalbaitxsaw",
+            youtubeLink: "https://www.youtube.com/channel/UC5ZUZadklafH_U8mBjhhNHQ"
+        };
+
+        // On Load initialization
+        window.onload = function() {
+            lucide.createIcons();
+            renderAllCards();
+            renderKarbalaTimeline();
+            updateDailyQuote();
+            updateStatsCount();
+            initializeHijriDatesAndAlarms();
+            setupVoiceDropdown();
+        };
+
+        // Render Cards dynamically
+        function renderAllCards() {
+            const currentDay = simulatedDay !== null ? simulatedDay : getHijriDay();
+            const currentMonth = simulatedMonth !== null ? simulatedMonth : getHijriMonth();
+
+            // Render Imams
+            const imamsGrid = document.getElementById("imams-grid");
+            imamsGrid.innerHTML = database.imams.map((p, idx) => {
+                const isHussain = p.id === 'imam3';
+                const isMartyrdomDay = p.deathDay === currentDay && p.deathMonth === currentMonth;
+                const isMuharramToArbaeen = isWithinHussainMourning(currentDay, currentMonth);
+
+                let cardBgClass = "bg-gradient-to-br from-emerald-900/60 to-emerald-950 border-emerald-800/80 hover:border-amber-500/40";
+                if (isHussain) {
+                    if (currentDay === 10 && currentMonth === 'محرم') {
+                        cardBgClass = "bg-gradient-to-br from-red-950 to-emerald-950 border-red-500 shadow-[0_0_20px_rgba(239,68,68,0.3)]";
+                    } else {
+                        cardBgClass = "bg-gradient-to-br from-emerald-900/60 to-emerald-950 border-red-500/40 hover:border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.1)]";
+                    }
+                } else if (isMartyrdomDay && p.id !== 'imam12') {
+                    cardBgClass = "bg-gradient-to-br from-red-950/80 to-emerald-950 border-red-500/60 shadow-[0_0_15px_rgba(239,68,68,0.2)]";
+                }
+
+                let nameStyleClass = 'text-lg font-bold text-gray-100 group-hover:text-amber-300 transition-colors';
+                if (isHussain) {
+                    nameStyleClass = 'text-2xl font-black text-red-500 drop-shadow-[0_0_12px_rgba(239,68,68,0.75)] animate-pulse relative';
+                } else if (isMartyrdomDay && p.id !== 'imam12') {
+                    nameStyleClass = 'text-lg font-bold text-red-400 drop-shadow-[0_0_10px_rgba(239,68,68,0.4)]';
+                }
+
+                let bloodContainerHtml = '';
+                if (isHussain && isMuharramToArbaeen) {
+                    bloodContainerHtml = `
+                        <div class="absolute inset-x-0 top-0 h-full overflow-hidden pointer-events-none">
+                            <div class="blood-drop" style="left: 20%; animation-delay: 0.1s; animation-duration: 2.5s;"></div>
+                            <div class="blood-drop" style="left: 50%; animation-delay: 0.8s; animation-duration: 1.8s;"></div>
+                            <div class="blood-drop" style="left: 80%; animation-delay: 1.4s; animation-duration: 3s;"></div>
+                        </div>
+                    `;
+                }
+
+                return `
+                <div class="card-item ${cardBgClass} p-5 rounded-2xl border transition-all duration-500 shadow-xl relative overflow-hidden group glow-amber"
+                     data-name="${p.name}" data-type="${p.type}" data-birth="${p.birth}" data-death="${p.death}">
+                    ${bloodContainerHtml}
+                    <div class="absolute -top-10 -left-10 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/10 transition-all duration-500"></div>
+                    
+                    <div class="flex items-center justify-between gap-2 border-b border-emerald-800/60 pb-3 mb-3" onclick="openDetail('${p.id}', 'imams')">
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-lg border border-amber-500/20">${idx === 0 ? "الرسول" : "الإمام الـ " + idx}</span>
+                        <i data-lucide="sparkle" class="w-4 h-4 text-amber-500/60 group-hover:text-amber-400 transition-colors"></i>
+                    </div>
+
+                    <div class="py-4 bg-emerald-950/40 rounded-xl border border-emerald-900/60 mb-4 transition-all duration-500 group-hover:scale-105 group-hover:bg-emerald-950/80 flex flex-col items-center">
+                        ${p.svg}
+                        <span class="text-[11px] text-amber-400 font-bold block mt-3 text-center px-4 border-t border-emerald-900/40 pt-2 w-full leading-relaxed">
+                            ${p.label || 'رمز وقور ومعبر'}
+                        </span>
+                    </div>
+
+                    <div onclick="openDetail('${p.id}', 'imams')" class="cursor-pointer space-y-2">
+                        <h3 class="${nameStyleClass}">${p.name}</h3>
+                        <p class="text-xs text-emerald-300/85">${p.type}</p>
+                        <div class="mt-4 pt-3 border-t border-emerald-900/60 flex flex-col gap-1.5 text-xs text-emerald-300 font-medium">
+                            <span class="flex items-center gap-2"><i data-lucide="cake" class="w-3.5 h-3.5 text-amber-500"></i> <strong class="text-emerald-100">الولادة:</strong> ${p.birth}</span>
+                            <span class="flex items-center gap-2"><i data-lucide="flag" class="w-3.5 h-3.5 text-red-500"></i> <strong class="text-emerald-100">الشهادة:</strong> ${p.death}</span>
+                        </div>
+                    </div>
+                    
+                    <button onclick="openMartyrdomModal('${p.id}')" 
+                        class="glow-green-btn bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-extrabold text-xs py-2.5 px-4 rounded-xl mt-4 flex items-center justify-center gap-1.5 w-full">
+                        <i data-lucide="droplet" class="w-4 h-4 text-red-700 fill-red-700 animate-pulse"></i>
+                        قصة الاستشهاد ✦
+                    </button>
+                </div>
+                `;
+            }).join('');
+
+            // Render Women
+            const womenGrid = document.getElementById("women-grid");
+            womenGrid.innerHTML = database.women.map(p => `
+                <div class="card-item bg-gradient-to-br from-emerald-900/60 to-emerald-950 p-5 rounded-2xl border border-emerald-800/80 hover:border-amber-500/40 transition-all duration-300 shadow-xl relative overflow-hidden group cursor-pointer glow-amber"
+                     onclick="openDetail('${p.id}', 'women')"
+                     data-name="${p.name}" data-type="${p.type}" data-birth="${p.birth}" data-death="${p.death}">
+                    <div class="absolute -top-10 -left-10 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/10 transition-all duration-500"></div>
+                    <div class="flex items-center justify-between gap-2 border-b border-emerald-800/60 pb-3 mb-3">
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-amber-500/10 text-amber-400 rounded-lg border border-amber-500/20">من أهل البيت</span>
+                        <i data-lucide="heart" class="w-4 h-4 text-amber-500/60 group-hover:text-amber-400 transition-colors"></i>
+                    </div>
+                    <div class="py-3 bg-emerald-950/30 rounded-xl border border-emerald-900/40 mb-3">
+                        ${p.svg}
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-bold text-gray-100 group-hover:text-amber-300 transition-colors">${p.name}</h3>
+                        <p class="text-xs text-emerald-300/80">${p.type}</p>
+                        <div class="mt-4 pt-3 border-t border-emerald-900/60 flex flex-col gap-1.5 text-xs text-emerald-300 font-medium">
+                            <span class="flex items-center gap-2"><i data-lucide="cake" class="w-3.5 h-3.5 text-amber-500"></i> <strong class="text-emerald-100">الولادة:</strong> ${p.birth}</span>
+                            <span class="flex items-center gap-2"><i data-lucide="flag" class="w-3.5 h-3.5 text-red-500"></i> <strong class="text-emerald-100">الوفاة:</strong> ${p.death}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        // Render the Karbala Timeline
+        function renderKarbalaTimeline() {
+            const currentDay = simulatedDay !== null ? simulatedDay : getHijriDay();
+            const currentMonth = simulatedMonth !== null ? simulatedMonth : getHijriMonth();
+
+            const timeline = document.getElementById("karbala-timeline");
+            timeline.innerHTML = database.karbala.map(item => {
+                const isMourningDay = currentDay === item.dayNum && currentMonth === 'محرم';
+                const isArbaeenMatch = isWithinHussainMourning(currentDay, currentMonth);
+
+                let cardBg = "from-emerald-900/60 to-emerald-950 border-emerald-800/80";
+                if (isMourningDay) {
+                    cardBg = "from-red-950 to-emerald-950 border-red-500/80 shadow-[0_0_20px_rgba(239,68,68,0.25)]";
+                }
+
+                const hussainMourningActive = (item.dayNum === 10 || item.dayNum === 7 || item.dayNum === 8 || item.dayNum === 9) && isArbaeenMatch;
+                const nameColorClass = hussainMourningActive ? 'text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)] animate-pulse' : 'text-amber-400';
+
+                let bloodContainer = '';
+                if (hussainMourningActive) {
+                    bloodContainer = `
+                        <div class="absolute inset-x-0 top-0 h-full overflow-hidden pointer-events-none">
+                            <div class="blood-drop" style="left: 15%; animation-delay: 0.3s; animation-duration: 2.2s;"></div>
+                            <div class="blood-drop" style="left: 75%; animation-delay: 1.1s; animation-duration: 2.8s;"></div>
+                        </div>
+                    `;
+                }
+
+                let timelineLabel = "رمز الفداء والجهاد المبارك";
+                if (item.dayNum === 7) {
+                    timelineLabel = "كف اليمين والقربة: رمز الوفاء والإيثار المطلق والسقاية";
+                } else if (item.dayNum === 8) {
+                    timelineLabel = "تاج الشباب والزفاف: رمز فداء الغلام الزكي اليتيم";
+                } else if (item.dayNum === 9) {
+                    timelineLabel = "الرمح والشهادة: رمز الفداء بالنفس لشبيه المصطفى";
+                } else if (item.dayNum === 10) {
+                    timelineLabel = "الراية والدم الشريف: رمز النصر الإلهي الحاسم بالدم المظلوم";
+                }
+
+                return `
+                <div class="relative pr-8 md:pr-12 group">
+                    <div class="absolute -right-3.5 top-1 ${isMourningDay ? 'bg-red-500 animate-ping' : 'bg-amber-500'} text-emerald-950 w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs border-4 border-emerald-950 group-hover:scale-110 transition-transform duration-300 z-10">
+                        ${item.dayNum}
+                    </div>
+                    
+                    <div class="bg-gradient-to-l ${cardBg} p-5 rounded-xl border hover:border-amber-500/40 transition-all duration-300 shadow-lg relative overflow-hidden">
+                        ${bloodContainer}
+                        <div class="flex flex-col md:flex-row gap-5 items-center">
+                            
+                            <div class="shrink-0 p-3 bg-emerald-950/60 rounded-xl border border-emerald-800/80 flex flex-col items-center">
+                                ${item.svg}
+                                <span class="text-[10px] text-amber-400 font-bold block mt-2 text-center max-w-[130px] leading-relaxed">
+                                    ${timelineLabel}
+                                </span>
+                            </div>
+
+                            <div class="flex-grow space-y-2">
+                                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-emerald-800/50 pb-3">
+                                    <div>
+                                        <h3 class="text-xl font-black ${nameColorClass}">${item.title}</h3>
+                                        <p class="text-xs text-emerald-400 mt-1">تاريخ ولادته: ${item.birth}</p>
+                                    </div>
+                                    <span class="bg-red-500/10 text-red-400 text-[11px] font-bold px-3 py-1 rounded border border-red-500/20">${item.subtitle}</span>
+                                </div>
+                                <p class="text-sm text-gray-200 leading-relaxed text-right">
+                                    ${item.desc}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+            lucide.createIcons();
+        }
+
+        function isWithinHussainMourning(day, month) {
+            if (month === 'محرم' && day >= 10) return true;
+            if (month === 'صفر' && day <= 20) return true;
+            return false;
+        }
+
+        // Search Filter function
+        function filterPersonalities() {
+            const query = document.getElementById("search-input").value.trim().toLowerCase();
+            const cards = document.querySelectorAll(".card-item");
+            const clearBtn = document.getElementById("clear-search-btn");
+
+            if (query !== "") {
+                clearBtn.classList.remove("hidden");
+            } else {
+                clearBtn.classList.add("hidden");
+            }
+
+            let visibleCount = 0;
+            cards.forEach(card => {
+                const name = card.getAttribute("data-name").toLowerCase();
+                const type = card.getAttribute("data-type").toLowerCase();
+                const birth = card.getAttribute("data-birth").toLowerCase();
+                const death = card.getAttribute("data-death").toLowerCase();
+
+                if (name.includes(query) || type.includes(query) || birth.includes(query) || death.includes(query)) {
+                    card.style.display = "block";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            document.getElementById("person-count").innerText = visibleCount;
+        }
+
+        function clearSearch() {
+            document.getElementById("search-input").value = "";
+            filterPersonalities();
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+            
+            document.querySelectorAll(".tab-btn").forEach(btn => {
+                btn.className = "tab-btn flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-semibold text-emerald-300 hover:text-amber-400 hover:bg-emerald-900/40 transition-all whitespace-nowrap";
+            });
+
+            document.getElementById(tabId).classList.add("active");
+            
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "tab-btn flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-amber-500 to-amber-600 text-emerald-950 shadow-md";
+            }
+        }
+
+        function openDetail(id, category) {
+            const list = database[category];
+            const item = list.find(x => x.id === id);
+            if (!item) return;
+
+            document.getElementById("modal-type-badge").innerText = item.type;
+            document.getElementById("modal-birth").innerText = item.birth;
+            document.getElementById("modal-death").innerText = item.death;
+            document.getElementById("modal-desc").innerText = item.desc;
+            document.getElementById("modal-quote").innerText = item.quote;
+
+            const titleEl = document.getElementById("modal-title");
+            titleEl.innerText = item.name;
+            if (id === 'imam3') {
+                titleEl.className = "text-2xl font-black text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.5)] mt-1";
+            } else {
+                titleEl.className = "text-xl font-bold text-amber-400 mt-1";
+            }
+
+            document.getElementById("details-modal").classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("details-modal").classList.add("hidden");
+        }
+
+        // MARTYRDOM MODAL ENGINE
+        function openMartyrdomModal(id) {
+            const item = database.imams.find(x => x.id === id);
+            if (!item || !item.martyrdom) return;
+
+            const isHussain = id === 'imam3';
+            const titleEl = document.getElementById("martyrdom-modal-title");
+            titleEl.innerText = "سيرة شهادة " + item.name;
+            
+            if (isHussain) {
+                titleEl.className = "text-xl font-black text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.65)]";
+            } else {
+                titleEl.className = "text-lg font-bold text-amber-400";
+            }
+
+            document.getElementById("martyrdom-modal-subtitle").innerText = "تفاصيل تاريخية مروية ومؤكدة عن استشهاده مباركاً";
+            document.getElementById("martyrdom-narrative").innerText = item.martyrdom.narrative;
+            document.getElementById("martyrdom-age").innerText = item.martyrdom.age;
+            document.getElementById("martyrdom-method").innerText = item.martyrdom.method;
+            document.getElementById("martyrdom-killer").innerText = item.martyrdom.killer;
+
+            document.getElementById("martyrdom-modal").classList.remove("hidden");
+        }
+
+        function closeMartyrdomModal() {
+            document.getElementById("martyrdom-modal").classList.add("hidden");
+        }
+
+        function updateDailyQuote() {
+            const randomIdx = Math.floor(Math.random() * randomQuotes.length);
+            const quoteObj = randomQuotes[randomIdx];
+            document.getElementById("daily-quote").innerText = quoteObj.text;
+            document.getElementById("daily-quote-author").innerText = "— " + quoteObj.author;
+        }
+
+        // Count update helper
+        function updateStatsCount() {
+            const total = database.imams.length + database.women.length;
+            document.getElementById("person-count").innerText = total;
+        }
+
+        function toggleAlarmSettings() {
+            const enabled = document.getElementById("voice-alarm-toggle").checked;
+            document.getElementById("alarm-day-before").disabled = !enabled;
+            document.getElementById("alarm-repeats").disabled = !enabled;
+            document.getElementById("voice-gender-profile").disabled = !enabled;
+            document.getElementById("system-voices-dropdown").disabled = !enabled;
+            
+            const statusEl = document.getElementById("speech-engine-status");
+            if (enabled) {
+                statusEl.innerText = "المنبه الصوتي التلقائي مفعّل";
+                statusEl.className = "text-sm font-semibold text-emerald-200 animate-pulse";
+            } else {
+                statusEl.innerText = "تم إيقاف المنبه الصوتي بالكامل";
+                statusEl.className = "text-sm font-semibold text-red-400";
+            }
+        }
+
+        function updateRepeatDisplay() {
+            const value = document.getElementById("alarm-repeats").value;
+            document.getElementById("repeat-count-display").innerText = `${value} تكرارات`;
+        }
+
+        function toggleVoiceSettingsModal() {
+            const modal = document.getElementById("voice-settings-modal");
+            modal.classList.toggle("hidden");
+        }
+
+        function toggleSupportModal() {
+            const modal = document.getElementById("support-modal");
+            modal.classList.toggle("hidden");
+        }
+
+        function openKoFiLink() {
+            window.open(supportConfig.koFiLink, "_blank");
+        }
+
+        // PREMIUM AUDIO SYNTHESIZER
+        function playPremiumPreChime(callback) {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) { if (callback) callback(); return; }
+                
+                const ctx = new AudioContext();
+                
+                const osc1 = ctx.createOscillator();
+                const osc2 = ctx.createOscillator();
+                const gain1 = ctx.createGain();
+                const gain2 = ctx.createGain();
+                const destGain = ctx.createGain();
+
+                osc1.type = 'sine';
+                osc1.frequency.setValueAtTime(329.63, ctx.currentTime); 
+
+                osc2.type = 'triangle';
+                osc2.frequency.setValueAtTime(659.25, ctx.currentTime); 
+
+                gain1.gain.setValueAtTime(0.5, ctx.currentTime);
+                gain1.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.2);
+
+                gain2.gain.setValueAtTime(0.15, ctx.currentTime);
+                gain2.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.8);
+
+                destGain.gain.setValueAtTime(0.3, ctx.currentTime);
+
+                osc1.connect(gain1);
+                osc2.connect(gain2);
+                gain1.connect(destGain);
+                gain2.connect(destGain);
+                destGain.connect(ctx.destination);
+
+                osc1.start();
+                osc2.start();
+
+                osc1.stop(ctx.currentTime + 1.5);
+                osc2.stop(ctx.currentTime + 1.5);
+
+                setTimeout(() => {
+                    ctx.close();
+                    if (callback) callback();
+                }, 1000);
+            } catch (e) {
+                console.log("AudioContext blocked or uninitialized:", e);
+                if (callback) callback();
+            }
+        }
+
+        // DYNAMIC SPEECH & VOICE SELECTORS
+        function setupVoiceDropdown() {
+            if (!('speechSynthesis' in window)) {
+                document.getElementById("system-voice-list-container").style.display = "none";
+                return;
+            }
+
+            const populateVoices = () => {
+                loadedVoices = window.speechSynthesis.getVoices();
+                const dropdown = document.getElementById("system-voices-dropdown");
+                dropdown.innerHTML = "";
+
+                const arabicVoices = loadedVoices.filter(v => v.lang.startsWith('ar'));
+
+                if (arabicVoices.length === 0) {
+                    dropdown.innerHTML = `<option value="default">النظام الافتراضي (صوت عربي متوفر تلقائياً)</option>`;
+                } else {
+                    arabicVoices.forEach(voice => {
+                        dropdown.innerHTML += `<option value="${voice.voiceURI}">${voice.name} (${voice.lang})</option>`;
+                    });
+                    dropdown.innerHTML += `<option value="default">الاعتماد على ضبط الملف الشخصي (رجل / امرأة)</option>`;
+                }
+            };
+
+            populateVoices();
+            if (window.speechSynthesis.onvoiceschanged !== undefined) {
+                window.speechSynthesis.onvoiceschanged = populateVoices;
+            }
+        }
+
+        function applyVoiceProfile() {
+            const profile = document.getElementById("voice-gender-profile").value;
+            currentVoiceConfig.profile = profile;
+
+            if (profile === 'male') {
+                currentVoiceConfig.pitch = 0.70; 
+                currentVoiceConfig.rate = 0.80;  
+            } else if (profile === 'female') {
+                currentVoiceConfig.pitch = 1.25; 
+                currentVoiceConfig.rate = 0.85;
+            } else {
+                currentVoiceConfig.pitch = 1.0;  
+                currentVoiceConfig.rate = 0.82;
+            }
+        }
+
+        function announceSentence(text, repetitions = 1) {
+            if (!('speechSynthesis' in window)) return;
+            
+            window.speechSynthesis.cancel();
+            
+            playPremiumPreChime(() => {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ar-SA';
+                
+                applyVoiceProfile();
+                utterance.pitch = currentVoiceConfig.pitch;
+                utterance.rate = currentVoiceConfig.rate;
+
+                const customVoiceURI = document.getElementById("system-voices-dropdown").value;
+                if (customVoiceURI !== 'default') {
+                    const selectedVoice = loadedVoices.find(v => v.voiceURI === customVoiceURI);
+                    if (selectedVoice) {
+                        utterance.voice = selectedVoice;
+                    }
+                } else {
+                    const arVoice = loadedVoices.find(voice => voice.lang.startsWith('ar'));
+                    if (arVoice) {
+                        utterance.voice = arVoice;
+                    }
+                }
+
+                let count = 0;
+                utterance.onend = function () {
+                    count++;
+                    if (count < repetitions) {
+                        setTimeout(() => {
+                            window.speechSynthesis.speak(utterance);
+                        }, 1200);
+                    }
+                };
+
+                window.speechSynthesis.speak(utterance);
+            });
+        }
+
+        function playTestAnnouncement() {
+            const reps = parseInt(document.getElementById("alarm-repeats").value) || 1;
+            const profile = document.getElementById("voice-gender-profile").value;
+            let intro = "تنبيهٌ صوتي، عظم الله أجوركم؛ ";
+            if (profile === 'female') intro = "تنبيهٌ، عظم الله أجوركم؛ ";
+            
+            const sampleText = intro + "غداً سيكون ذكرى استشهاد سبط الرسول الإمام الحسين عليه السلام، سيد الشهداء وأبو الأحرار.";
+            announceSentence(sampleText, reps);
+        }
+
+        function stopAllSpeech() {
+            window.speechSynthesis.cancel();
+        }
+
+        // ROBUST HIJRI CALENDAR CONVERTER & ALARM ENGINE
+        function getFallbackHijri(date) {
+            var jd = Math.floor((date.getTime() / 86400000) + 2440587.5);
+            var l = jd - 1948440 + 10632;
+            var n = Math.floor((l - 1) / 10631);
+            l = l - 10631 * n + 354;
+            var j = (Math.floor((10985 - l) / 5316)) * (Math.floor((50 * l) / 17719)) + (Math.floor(l / 5670)) * (Math.floor((43 * l) / 15238));
+            l = l - (Math.floor((30 - j) / 15)) * (Math.floor((17719 * j) / 50)) - (Math.floor(j / 16)) * (Math.floor((15238 * j) / 43)) + 29;
+            var m = Math.floor((24 * l) / 709);
+            var d = l - Math.floor((709 * m) / 24);
+            var y = 30 * n + j - 30;
+            
+            const toArabic = (num) => String(num).replace(/\d/g, digit => '٠١٢٣٤٥٦٧٨٩'[digit]);
+            const monthName = hijriMonths[m - 1] || "محرم";
+            
+            return { day: d, month: monthName, formatted: `${toArabic(d)} ${monthName} ${toArabic(y)} هـ` };
+        }
+
+        function getHijriDay() {
+            if (simulatedDay !== null) return simulatedDay;
+            const fallback = getFallbackHijri(new Date());
+            return fallback.day;
+        }
+
+        function getHijriMonth() {
+            if (simulatedMonth !== null) return simulatedMonth;
+            const fallback = getFallbackHijri(new Date());
+            return fallback.month;
+        }
+
+        function initializeHijriDatesAndAlarms() {
+            try {
+                if (simulatedDay !== null && simulatedMonth !== null) {
+                    const toArabic = (num) => String(num).replace(/\d/g, digit => '٠١٢٣٤٥٦٧٨٩'[digit]);
+                    document.getElementById("hijri-date-display").innerText = `${toArabic(simulatedDay)} ${simulatedMonth} ١٤٤٨ هـ (محاكاة)`;
+                    checkEvents(simulatedDay, simulatedMonth);
+                    return;
+                }
+
+                const formatter = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+
+                const todayFormatted = formatter.format(new Date()); 
+                document.getElementById("hijri-date-display").innerText = todayFormatted;
+
+                const parts = todayFormatted.split(' ');
+                const convertArabicNumerals = (str) => {
+                    return str.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+                };
+
+                let dayNum = parseInt(convertArabicNumerals(parts[0]));
+                let hijriMonth = parts[1];
+                if (parts[2] && !hijriMonths.includes(hijriMonth)) {
+                    hijriMonth = parts[1] + ' ' + parts[2];
+                }
+
+                const gregFormatter = new Intl.DateTimeFormat('ar-SA', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                document.getElementById("gregorian-date-display").innerText = gregFormatter.format(new Date());
+
+                checkEvents(dayNum, hijriMonth);
+
+            } catch (e) {
+                console.error("Intl Islamic calendar formatter fallback activated.", e);
+                const fallback = getFallbackHijri(new Date());
+                document.getElementById("hijri-date-display").innerText = fallback.formatted;
+
+                const gregFormatter = new Intl.DateTimeFormat('ar-SA', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                });
+                document.getElementById("gregorian-date-display").innerText = gregFormatter.format(new Date());
+
+                checkEvents(fallback.day, fallback.month);
+            }
+        }
+
+        function simulateDate(day, month) {
+            simulatedDay = day;
+            simulatedMonth = month;
+            
+            initializeHijriDatesAndAlarms();
+            
+            renderAllCards();
+            renderKarbalaTimeline();
+            
+            toggleVoiceSettingsModal();
+        }
+
+        function checkEvents(todayDay, todayMonth) {
+            let tomorrowDay = todayDay + 1;
+            let tomorrowMonth = todayMonth;
+            if (tomorrowDay > 30) {
+                tomorrowDay = 1;
+                const currentMonthIndex = hijriMonths.indexOf(todayMonth);
+                tomorrowMonth = hijriMonths[(currentMonthIndex + 1) % 12];
+            }
+
+            let todayEvent = null;
+            let tomorrowEvent = null;
+
+            const allPersonalities = [...database.imams, ...database.women];
+            
+            allPersonalities.forEach(p => {
+                if (p.birthDay === todayDay && p.birthMonth === todayMonth) {
+                    todayEvent = { type: 'ولد', name: p.name, id: p.id };
+                } else if (p.birthDay === tomorrowDay && p.birthMonth === tomorrowMonth) {
+                    tomorrowEvent = { type: 'ولد', name: p.name, id: p.id };
+                }
+                
+                if (p.deathDay === todayDay && p.deathMonth === todayMonth) {
+                    todayEvent = { type: 'استشهاد', name: p.name, id: p.id };
+                } else if (p.deathDay === tomorrowDay && p.deathMonth === tomorrowMonth) {
+                    tomorrowEvent = { type: 'استشهاد', name: p.name, id: p.id };
+                }
+            });
+
+            const banner = document.getElementById("today-event-text");
+            let announcementText = "";
+
+            if (todayEvent) {
+                const eventWord = todayEvent.type === 'ولد' ? 'ذكرى ميلاد' : 'ذكرى استشهاد';
+                if (todayEvent.id === 'imam3') {
+                    banner.innerHTML = `<span class="text-red-500 font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(239,68,68,0.5)]">اليوم: ${eventWord} ${todayEvent.name}</span>`;
+                } else {
+                    banner.innerText = `اليوم: ${eventWord} ${todayEvent.name}`;
+                }
+                announcementText = `نلفت انتباهكم الشريف؛ اليوم هو ${eventWord} ${todayEvent.name}. السلام عليكم أهل بيت النبوة ومعدن الرسالة.`;
+                document.getElementById("alert-speaker-btn").classList.remove("hidden");
+            } else if (tomorrowEvent) {
+                const eventWord = tomorrowEvent.type === 'ولد' ? 'ذكرى ميلاد' : 'ذكرى استشهاد';
+                if (tomorrowEvent.id === 'imam3') {
+                    banner.innerHTML = `<span class="text-red-400 font-bold">غداً: ${eventWord} ${tomorrowEvent.name}</span>`;
+                } else {
+                    banner.innerText = `غداً: ${eventWord} ${tomorrowEvent.name}`;
+                }
+                document.getElementById("alert-speaker-btn").classList.remove("hidden");
+                
+                if (document.getElementById("alarm-day-before").checked) {
+                    announcementText = `تنبيهٌ مبارك؛ غداً سيكون ${eventWord} ${tomorrowEvent.name}. نسأل الله أن يرزقنا وإياكم شفاعتهم يوم الحساب.`;
+                }
+            } else {
+                banner.innerText = "لا توجد مناسبات مسجلة لليوم أو الغد؛ تصفح الموسوعة لقراءة السير الكريمة والقصص العطرة.";
+                document.getElementById("alert-speaker-btn").classList.add("hidden");
+            }
+
+            lastMatchedEventText = announcementText;
+
+            if (announcementText !== "" && document.getElementById("voice-alarm-toggle").checked) {
+                const repetitions = parseInt(document.getElementById("alarm-repeats").value) || 3;
+                showAudioAutoplayToast(announcementText, repetitions);
+            }
+        }
+
+        function playCurrentMatchEventAlert() {
+            if (lastMatchedEventText !== "") {
+                const repetitions = parseInt(document.getElementById("alarm-repeats").value) || 1;
+                announceSentence(lastMatchedEventText, repetitions);
+            }
+        }
+
+        function showAudioAutoplayToast(text, reps) {
+            const existingToast = document.getElementById("autoplay-toast");
+            if (existingToast) existingToast.remove();
+
+            const toast = document.createElement("div");
+            toast.id = "autoplay-toast";
+            toast.className = "fixed bottom-5 left-5 right-5 md:left-auto md:max-w-sm bg-gradient-to-r from-emerald-950 to-emerald-900 p-4 rounded-xl border border-amber-500/40 shadow-2xl z-50 animate-bounce text-right flex flex-col gap-2";
+            toast.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <i data-lucide="bell-ring" class="text-amber-400 w-5 h-5"></i>
+                    <span class="text-xs font-bold text-amber-400">تنبيه المناسبة الهجرية التلقائي!</span>
+                </div>
+                <p class="text-xs text-gray-200">وجدنا مناسبة دينية مطابقة اليوم لآل بيت المصطفى. اضغط للاستماع للتنبيه الصوتي.</p>
+                <button onclick="triggerToastAnnouncement(this, \`${text}\`, ${reps})" class="py-2 px-4 bg-amber-500 hover:bg-amber-600 text-emerald-950 font-bold text-xs rounded-lg transition-all">
+                    تشغيل الإعلان الصوتي 🔔
+                </button>
+            `;
+            document.body.appendChild(toast);
+            lucide.createIcons();
+        }
+
+        function triggerToastAnnouncement(btn, text, reps) {
+            announceSentence(text, reps);
+            btn.parentElement.remove();
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("details-modal");
+            const martyrdomModal = document.getElementById("martyrdom-modal");
+            const voiceModal = document.getElementById("voice-settings-modal");
+            const supportModal = document.getElementById("support-modal");
+            if (event.target === modal) {
+                closeModal();
+            }
+            if (event.target === martyrdomModal) {
+                closeMartyrdomModal();
+            }
+            if (event.target === voiceModal) {
+                toggleVoiceSettingsModal();
+            }
+            if (event.target === supportModal) {
+                toggleSupportModal();
+            }
+        };
+
+
+        // DEEP HISTORICAL QUIZ ENGINE
+        function startQuiz() {
+            const shuffled = [...quizData].sort(() => 0.5 - Math.random());
+            quizState.questions = shuffled.slice(0, 8); 
+            quizState.currentIndex = 0;
+            quizState.score = 0;
+            quizState.answered = false;
+            quizState.selectedAnswer = null;
+
+            document.getElementById("quiz-intro").classList.add("hidden");
+            document.getElementById("quiz-result").classList.add("hidden");
+            document.getElementById("quiz-active").classList.remove("hidden");
+
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            quizState.answered = false;
+            quizState.selectedAnswer = null;
+            
+            const currentQ = quizState.questions[quizState.currentIndex];
+            
+            document.getElementById("quiz-current-num").innerText = quizState.currentIndex + 1;
+            document.getElementById("quiz-score").innerText = quizState.score;
+            document.getElementById("quiz-question").innerText = currentQ.q;
+            document.getElementById("quiz-feedback").classList.add("hidden");
+            document.getElementById("quiz-next-btn").classList.add("hidden");
+
+            const percent = ((quizState.currentIndex) / 8) * 100;
+            document.getElementById("quiz-progress-bar").style.width = `${percent}%`;
+
+            const optionsDiv = document.getElementById("quiz-options");
+            optionsDiv.innerHTML = currentQ.options.map((opt, idx) => `
+                <button onclick="selectOption(${idx})" id="opt-btn-${idx}" 
+                    class="w-full text-right p-4 rounded-xl bg-emerald-950 hover:bg-emerald-900 border border-emerald-800 hover:border-amber-500/50 text-emerald-100 hover:text-amber-300 font-medium transition-all text-sm flex items-center justify-between group">
+                    <span>${opt}</span>
+                    <i data-lucide="circle" class="w-4 h-4 text-emerald-700 group-hover:text-amber-500/50 transition-colors"></i>
+                </button>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        function selectOption(idx) {
+            if (quizState.answered) return; 
+            
+            quizState.answered = true;
+            quizState.selectedAnswer = idx;
+
+            const currentQ = quizState.questions[quizState.currentIndex];
+            const isCorrect = (idx === currentQ.correct);
+
+            for (let i = 0; i < currentQ.options.length; i++) {
+                const btn = document.getElementById(`opt-btn-${i}`);
+                if (i === currentQ.correct) {
+                    btn.className = "w-full text-right p-4 rounded-xl bg-emerald-800 border-2 border-emerald-500 text-white font-bold text-sm flex items-center justify-between";
+                    btn.innerHTML += `<i data-lucide="check-circle" class="w-5 h-5 text-emerald-300"></i>`;
+                } else if (i === idx) {
+                    btn.className = "w-full text-right p-4 rounded-xl bg-red-950 border-2 border-red-500 text-red-200 font-bold text-sm flex items-center justify-between";
+                    btn.innerHTML += `<i data-lucide="x-circle" class="w-5 h-5 text-red-400"></i>`;
+                } else {
+                    btn.className = "w-full text-right p-4 rounded-xl bg-emerald-950/40 border border-emerald-900 text-emerald-600/60 text-sm flex items-center justify-between pointer-events-none";
+                }
+            }
+
+            const feedbackBox = document.getElementById("quiz-feedback");
+            feedbackBox.classList.remove("hidden");
+            if (isCorrect) {
+                quizState.score += 10;
+                document.getElementById("quiz-score").innerText = quizState.score;
+                feedbackBox.className = "p-4 rounded-xl bg-emerald-950 border border-emerald-500 text-emerald-400 font-bold text-center text-sm";
+                feedbackBox.innerHTML = `أحسنتم! إجابة صحيحة وموفقة تاريخياً ✨ (+10 نقاط)`;
+            } else {
+                feedbackBox.className = "p-4 rounded-xl bg-red-950/50 border border-red-850 text-red-400 font-bold text-center text-sm";
+                feedbackBox.innerHTML = `إجابة خاطئة! الصواب هو: <span class="text-amber-400 font-bold">${currentQ.options[currentQ.correct]}</span>`;
+            }
+
+            document.getElementById("quiz-next-btn").classList.remove("hidden");
+            lucide.createIcons();
+        }
+
+        function nextQuestion() {
+            if (quizState.currentIndex < 7) {
+                quizState.currentIndex++;
+                loadQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById("quiz-active").classList.add("hidden");
+            document.getElementById("quiz-result").classList.remove("hidden");
+            document.getElementById("quiz-progress-bar").style.width = `100%`;
+
+            const score = quizState.score;
+            document.getElementById("final-score").innerText = `${score} / 80`;
+
+            const iconContainer = document.getElementById("result-icon-container");
+            const titleEl = document.getElementById("result-title");
+            const textEl = document.getElementById("result-text");
+            const ratingEl = document.getElementById("final-rating");
+
+            if (score >= 70) {
+                iconContainer.className = "w-24 h-24 bg-gradient-to-br from-amber-500 to-amber-600 text-emerald-950 rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-amber-500/30";
+                iconContainer.innerHTML = `<i data-lucide="crown" class="w-12 h-12"></i>`;
+                titleEl.innerText = "ما شاء الله! باحث مؤرخ ومحقق";
+                textEl.innerText = "أثبتّ معرفة دقيقة ومبهرة وغزيرة جداً في سيرة أئمة أهل البيت وتفاصيل ملحمة كربلاء الأليمة.";
+                ratingEl.innerText = "منارة التاريخ 🌟";
+            } else if (score >= 40) {
+                iconContainer.className = "w-24 h-24 bg-gradient-to-br from-emerald-700 to-emerald-800 text-amber-400 rounded-full flex items-center justify-center mx-auto shadow-2xl";
+                iconContainer.innerHTML = `<i data-lucide="sparkles" class="w-12 h-12"></i>`;
+                titleEl.innerText = "إنجاز جيد جداً";
+                textEl.innerText = "لديك دراية حسنة بالمعطيات التاريخية، ننصحك بقراءة القصص وسير الاستشهاد لترتفع معرفتك للحد الأقصى.";
+                ratingEl.innerText = "طالب فِقه وتاريخ 📚";
+            } else {
+                iconContainer.className = "w-24 h-24 bg-gradient-to-br from-red-900/40 to-red-950 text-red-400 rounded-full flex items-center justify-center mx-auto border border-red-500/25";
+                iconContainer.innerHTML = `<i data-lucide="book-open" class="w-12 h-12"></i>`;
+                titleEl.innerText = "بحاجة لمراجعة السير!";
+                textEl.innerText = "الاختبار كان غاية في العمق التاريخي. خذ وقتاً في مراجعة بطاقات الأئمة وقصص استشهادهم وأعد المحاولة.";
+                ratingEl.innerText = "مستكشف مبتدئ 🔍";
+            }
+
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
