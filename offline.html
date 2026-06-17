@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>غير متصل - أنوار العترة</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            background: #011c16;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            max-width: 400px;
+            width: 100%;
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(245,158,11,0.1);
+            border: 2px solid rgba(245,158,11,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+        p {
+            color: #6ee7b7;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 0.9rem;
+        }
+        .quote {
+            font-style: italic;
+            color: #a7f3d0;
+            border-right: 3px solid #fbbf24;
+            padding-right: 1rem;
+            margin: 1.5rem 0;
+            text-align: right;
+            font-size: 0.85rem;
+        }
+        button {
+            background: linear-gradient(to left, #f59e0b, #d97706);
+            color: #011c16;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        button:active { transform: scale(0.97); }
+        .divider {
+            border-color: rgba(245,158,11,0.15);
+            margin: 1.5rem 0;
+        }
+        .tip {
+            font-size: 0.75rem;
+            color: #064e3b;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">📴</div>
+        <h1>لا يوجد اتصال بالإنترنت</h1>
+        <p>يبدو أنك غير متصل حالياً بشبكة الإنترنت. تحقق من اتصالك وأعد المحاولة.</p>
+        
+        <div class="quote">
+            «العِلْمُ كَنْزٌ عَظِيمٌ لَا يَفْنَى» — الإمام علي بن أبي طالب (ع)
+        </div>
+        
+        <hr class="divider">
+        <button onclick="location.reload()">🔄 إعادة المحاولة</button>
+        <p class="tip">بعد إعادة الاتصال، ستعمل الموسوعة بشكل كامل مجدداً</p>
+    </div>
+</body>
+</html>
